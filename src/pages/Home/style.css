@@ -1,9 +1,12 @@
 /* Global Custom CSS */
+body {
+    background: #0d1015;
+}
 .dark-1 {
     background-color: #192028;
 }
 
-
+/* Top Banner CSS */
 .top__banner {
     background: url(/images/top-banner.png) no-repeat 0 0;
     width: 100%;
@@ -15,4 +18,16 @@
 }
 .top__banner .title__wrapper span > span{
     color: #F53077;
+}
+
+/* Homepage Promo Swiper CSS */
+.hp__promo__swiper i {
+    background: #16202c;
+    height: 50px;
+}
+.hp__promo__swiper .icon-arrow-long-left {
+    border-radius: 8px 0 0 8px;
+}
+.hp__promo__swiper .icon-arrow-long-right {
+    border-radius: 0 8px 8px 0; 
 }

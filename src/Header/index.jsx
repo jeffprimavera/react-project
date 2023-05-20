@@ -1,12 +1,11 @@
 import {Link} from 'react-router-dom'
-import Sidenav from './sidenav'
 import { IconMenu2, IconTrophy, IconBallFootball } from '@tabler/icons-react';
 
 const Header = () => {
   return (
     <>
     <header>
-      <nav className='dark-1 px-4 py-2'>
+      <nav className='dark-1 px-4 py-2 fixed w-full z-50'>
         <div className="navbar">
 
           <div className="flex-1 items-center">
