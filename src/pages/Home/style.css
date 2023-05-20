@@ -1,0 +1,18 @@
+/* Global Custom CSS */
+.dark-1 {
+    background-color: #192028;
+}
+
+
+.top__banner {
+    background: url(/images/top-banner.png) no-repeat 0 0;
+    width: 100%;
+    height: 270px;
+    background-size: contain;
+}
+.top__banner .title__wrapper {
+    line-height: 62px;;
+}
+.top__banner .title__wrapper span > span{
+    color: #F53077;
+}
