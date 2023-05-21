@@ -5,6 +5,7 @@ import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper";
 import IMAGES from '../../images.json';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import {Link} from 'react-router-dom'
 
 const Homepageslider = () => {
     
@@ -33,7 +34,7 @@ const Homepageslider = () => {
                { IMAGES && IMAGES.map((item) => {
                 return (
                     <SwiperSlide key={item.id} >
-                        <img src={ item.img } alt={item.alt} />
+                        <Link to={item.link}><img src={ item.img } alt={item.alt} /></Link>
                     </SwiperSlide>
                 )
                }
