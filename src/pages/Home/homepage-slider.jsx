@@ -33,7 +33,7 @@ const Homepageslider = () => {
                { IMAGES && IMAGES.map((item) => {
                 return (
                     <SwiperSlide key={item.id} >
-                        <img src={ item.img } alt="" />
+                        <img src={ item.img } alt={item.alt} />
                     </SwiperSlide>
                 )
                }
