@@ -1,4 +1,26 @@
-/* Global Custom CSS */
+/*==============================================
+Author: Jeffrey Primavera
+Version:    1
+Created:    13 May 2023
+Last updated:    
+Template:  Mobile/Web React Template
+================================================*/
+
+/*
+[Table of Contents]
+★ 00 Global Custom CSS
+★ 01 Header CSS
+★ 03 Aside Sidenav CSS 
+★ 04 Top Banner CSS
+★ 05 Homepage Promo Swiper CSS
+
+
+
+
+
+
+
+/******************************** 00 Global Custom CSS ********************************/
 body {
     background: #0d1015;
 }
@@ -6,7 +28,28 @@ body {
     background-color: #192028;
 }
 
-/* Top Banner CSS */
+/******************************** 01 Header CSS ********************************/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 104;
+}
+
+/******************************** 03 Aside Sidenav CSS ********************************/
+aside {
+    height: 100%;
+    background: #11171d;
+    padding-top: 95px;
+    position: fixed;
+    z-index: 103;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/******************************** 04 Top Banner CSS ********************************/
 .top__banner {
     background: url(/images/top-banner.png) no-repeat 0 0;
     width: 100%;
@@ -19,7 +62,7 @@ body {
     color: #F53077;
 }
 
-/* Homepage Promo Swiper CSS */
+/******************************** 05 Homepage Promo Swiper CSS ********************************/
 .hp__promo__swiper i {
     background: #16202c;
     height: 50px;

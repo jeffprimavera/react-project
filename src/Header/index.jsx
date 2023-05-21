@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
     <header>
-      <nav className='dark-1 px-4 py-2 fixed w-full z-50'>
+      <nav className='dark-1 px-4 py-2 fixed w-full z-50 shadow-xl'>
         <div className="navbar">
 
           <div className="flex-1 items-center">
