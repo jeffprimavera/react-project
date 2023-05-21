@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import "swiper/css/navigation";
-import { Navigation } from "swiper";
+import "swiper/css/autoplay";
+import { Navigation, Autoplay } from "swiper";
 import IMAGES from '../../images.json';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 
@@ -17,11 +18,15 @@ const Homepageslider = () => {
         <Swiper
         spaceBetween={10}
         slidesPerView={4}
+        autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+        }}
         navigation={{
             nextEl: '.review-swiper-button-next',
             prevEl: '.review-swiper-button-prev',
-          }}
-        modules={[Navigation]}
+        }}
+        modules={[Navigation, Autoplay ]}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)} >
             
