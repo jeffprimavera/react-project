@@ -1,7 +1,16 @@
+import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
 import { IconMenu2, IconTrophy, IconBallFootball } from '@tabler/icons-react';
+import Logo from  '/images/logo.png'
 
 const Header = () => {
+
+  const [show, setShow] = useState(true)
+
+  const toggleShow = () => {
+    setShow(!show);
+  };
+
   return (
     <>
     <header>
@@ -10,8 +19,8 @@ const Header = () => {
 
           <div className="flex-1 items-center">
             <div className='flex gap-2 items-center pr-4'>
-              <IconMenu2 className='cursor-pointer' color='orange' />
-              <Link className="normal-case text-xl px-2" to="/">Logo Casino</Link>
+              <IconMenu2 className='cursor-pointer' color='orange' onClick={toggleShow} />
+              <Link className="normal-case text-xl px-2 h-12 w-36" to="/"><img src={Logo}/></Link>
             </div>
             <div className='flex gap-2'>
               <button className="btn btn-sm gap-1"><IconBallFootball className='pointer' color='orange' /> Sports</button>

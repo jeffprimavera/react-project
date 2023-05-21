@@ -17,15 +17,19 @@ Template:  Mobile/Web React Template
 
 
 
-
-
-
 /******************************** 00 Global Custom CSS ********************************/
+:root {
+    --nav-width: 8px;
+}
+
 body {
     background: #0d1015;
 }
 .dark-1 {
     background-color: #192028;
+}
+main {
+    transition: 0.5s;
 }
 
 /******************************** 01 Header CSS ********************************/
@@ -36,6 +40,12 @@ header {
     right: 0;
     z-index: 104;
 }
+.show {
+    left: 0;
+}
+.space-toggle {
+    padding-left:  calc(var(--nav-width) + 0 );
+}
 
 /******************************** 03 Aside Sidenav CSS ********************************/
 aside {
@@ -44,9 +54,10 @@ aside {
     padding-top: 95px;
     position: fixed;
     z-index: 103;
-    left: 0;
+    left: -30%;
     top: 0;
     bottom: 0;
+    transition: 0.5s;
 }
 
 /******************************** 04 Top Banner CSS ********************************/

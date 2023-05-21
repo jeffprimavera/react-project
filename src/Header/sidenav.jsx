@@ -1,9 +1,13 @@
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 
 const Sidenav = () => {
+
+  const [show, setShow] = useState(true)
+
   return (
     <>
-    <aside className="flex w-72 box-shadow-8">
+    <aside className={`flex w-72 box-shadow-8 ${show ? 'show' : null}`}>
       <div className='flex flex-col min-h-full relative px-5'>
         side nav
       </div>
