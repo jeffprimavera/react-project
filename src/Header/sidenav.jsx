@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 
-const Sidenav = () => {
-
-  const [show, setShow] = useState(true)
+const Sidenav = ({show}) => {
 
   return (
     <>

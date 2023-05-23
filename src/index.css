@@ -1,3 +1,112 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*==============================================
+Author: Jeffrey Primavera
+Version:    1
+Created:    13 May 2023
+Last updated:    
+Template:  Mobile/Web React Template
+================================================*/
+
+/*
+[Table of Contents]
+★ 00 Global Custom CSS
+★ 01 Header CSS
+★ 03 Aside Sidenav CSS 
+★ 04 Top Banner CSS
+★ 05 Homepage Promo Swiper CSS
+
+
+
+
+/******************************** 00 Global Custom CSS ********************************/
+:root {
+    --nav-width: 8px;
+}
+
+body {
+    background: #0d1015;
+}
+.dark-1 {
+    background-color: #192028;
+}
+.bg__pink {
+    background: -webkit-radial-gradient(50% 17.65%,55.15% 55.15%,#f53077 0%,#fe488a .01%,#e42c6e 100%);
+    background: -moz-radial-gradient(50% 17.65%,55.15% 55.15%,#f53077 0%,#fe488a .01%,#e42c6e 100%);
+    background: radial-gradient(55.15% 55.15% at 50% 17.65%,#f53077 0%,#fe488a .01%,#e42c6e 100%);
+}
+.bg__lightblue {
+    background: -webkit-linear-gradient(194.38deg,#7a4bff -30.17%,#00b6de 124.49%);
+    background: -moz-linear-gradient(194.38deg,#7a4bff -30.17%,#00b6de 124.49%);
+    background: linear-gradient(255.62deg,#7a4bff -30.17%,#00b6de 124.49%);
+}
+.border__line__btn {
+    border-color: transparent;
+    background-clip: padding-box,border-box;
+    background-origin: padding-box,border-box;
+    background-image: -webkit-linear-gradient(left,#192028,#192028),-webkit-linear-gradient(198.08deg,#4dadf3 0%,#fb4988 100%);
+    background-image: -moz-linear-gradient(left,#192028,#192028),-moz-linear-gradient(198.08deg,#4dadf3 0%,#fb4988 100%);
+    background-image: linear-gradient(to right,#192028,#192028),linear-gradient(251.92deg,#4dadf3 0%,#fb4988 100%);
+}
+main {
+    transition: 0.5s;
+}
+
+/******************************** 01 Header CSS ********************************/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 104;
+}
+.show {
+    left: 0;
+}
+.space-toggle {
+    padding-left:  calc(var(--nav-width) + 0 );
+}
+
+/******************************** 03 Aside Sidenav CSS ********************************/
+aside {
+    height: 100%;
+    background: #11171d;
+    padding-top: 95px;
+    position: fixed;
+    z-index: 103;
+    left: -30%;
+    top: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+/******************************** 04 Top Banner CSS ********************************/
+.top__banner {
+    background: url(/images/top-banner.png) no-repeat 0 0;
+    width: 100%;
+    background-size: cover;
+}
+.top__banner .title__wrapper {
+    line-height: 62px;;
+}
+.top__banner .title__wrapper span > span{
+    color: #F53077;
+}
+
+/******************************** 05 Homepage Promo Swiper CSS ********************************/
+.hp__promo__swiper i {
+    background: #16202c;
+    height: 50px;
+}
+.hp__promo__swiper .icon-arrow-long-left {
+    border-radius: 8px 0 0 8px;
+    margin: auto 0;
+    width: 24px
+}
+.hp__promo__swiper .icon-arrow-long-right {
+    border-radius: 0 8px 8px 0; 
+    margin: auto 0;
+    width: 24px
+}

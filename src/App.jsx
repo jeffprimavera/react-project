@@ -7,16 +7,18 @@ import './index.css'
 
 const App = () => {
 
-  const [show] = useState(false)
+  const [show, setShow] = useState(false)
+
+  const toggleShow = () => setShow(prev => !prev)
 
   return (
-    <div className={`flex flex-col h-screen w-screen pl-72 duration-300 ${show ? 'space-toggle' : null} `}>
-      <Header />
-      <main className="flex flex-col overflow-hidden min-h-full px-10 pb-4 z-0 pt-28">
+    <div className={`flex flex-col h-screen w-screen pl-72 duration-300 ${show ? null : 'space-toggle'} `}>
+      <Header onClick={toggleShow} />
+      <main className="container mx-auto flex flex-col overflow-hidden min-h-full px-10 pb-4 z-0 pt-28">
         <Outlet />
+        <Footer /> 
       </main>
-      <Sidenav />
-      <Footer /> 
+      <Sidenav show={show} />
     </div>
   )
 }

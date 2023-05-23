@@ -3,13 +3,7 @@ import {Link} from 'react-router-dom'
 import { IconMenu2, IconTrophy, IconBallFootball } from '@tabler/icons-react';
 import Logo from  '/images/logo.png'
 
-const Header = () => {
-
-  const [show, setShow] = useState(true)
-
-  const toggleShow = () => {
-    setShow(!show);
-  };
+const Header = ({onClick}) => {
 
   return (
     <>
@@ -19,17 +13,17 @@ const Header = () => {
 
           <div className="flex-1 items-center">
             <div className='flex gap-2 items-center pr-4'>
-              <IconMenu2 className='cursor-pointer' color='orange' onClick={toggleShow} />
+              <IconMenu2 className='cursor-pointer' color='orange' onClick={onClick} />
               <Link className="normal-case text-xl px-2 h-12 w-36" to="/"><img src={Logo}/></Link>
             </div>
             <div className='flex gap-2'>
-              <button className="btn btn-sm gap-1"><IconBallFootball className='pointer' color='orange' /> Sports</button>
-              <button className="btn btn-sm gap-1"><IconTrophy className='pointer' color='orange' /> Esports</button>
+              <button className="btn gap-1 border__line__btn hover:border-white"><IconBallFootball className='pointer' color='orange' /> Sports</button>
+              <button className="btn gap-1"><IconTrophy className='pointer' color='orange' /> Esports</button>
             </div>
           </div>
           <div className="flex gap-2">
-          <button className="btn">Login</button>
-          <button className="btn btn-outline">Sign Up</button>
+          <button className="btn bg__pink">Login</button>
+          <button className="btn bg__lightblue">Sign Up</button>
             {/* <ul className="menu menu-horizontal px-1">
               <li><Link to="/">Home</Link></li>
               <li><Link to="about">About</Link></li>

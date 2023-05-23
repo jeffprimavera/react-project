@@ -9,7 +9,7 @@ export default {
     screens: {
       mobile: "640px",
       tablet: "960px",
-      desktop: "1280px",
+      desktop: "1360px",
     }
   },
   plugins: [require("daisyui")],
