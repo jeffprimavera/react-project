@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
+import Sports from './pages/Sports'
 import App from './App'
 
 const Router = ( ) => {
@@ -21,6 +22,10 @@ const Router = ( ) => {
         <Route
           path="projects"
           element={<Projects />}
+        />
+        <Route
+          path="sports"
+          element={<Sports />}
         />
       </Route>
     </Routes>

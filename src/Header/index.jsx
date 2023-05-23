@@ -17,7 +17,11 @@ const Header = ({onClick}) => {
               <Link className="normal-case text-xl px-2 h-12 w-36" to="/"><img src={Logo}/></Link>
             </div>
             <div className='flex gap-2'>
-              <button className="btn gap-1 border__line__btn hover:border-white"><IconBallFootball className='pointer' color='orange' /> Sports</button>
+              <Link to="sports">
+                <button component={Link} to="sports" className="btn gap-1 border__line__btn hover:border-white">
+                  <IconBallFootball className='pointer' color='orange' /> Sports
+                </button>
+              </Link>
               <button className="btn gap-1"><IconTrophy className='pointer' color='orange' /> Esports</button>
             </div>
           </div>
