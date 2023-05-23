@@ -19,6 +19,7 @@ const Homepageslider = () => {
         <Swiper
         spaceBetween={10}
         slidesPerView={4}
+        loop={true}
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,
@@ -27,9 +28,7 @@ const Homepageslider = () => {
             nextEl: '.review-swiper-button-next',
             prevEl: '.review-swiper-button-prev',
         }}
-        modules={[Navigation, Autoplay ]}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)} >
+        modules={[Navigation, Autoplay ]} >
             
                { IMAGES && IMAGES.map((item) => {
                 return (

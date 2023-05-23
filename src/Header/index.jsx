@@ -13,7 +13,7 @@ const Header = ({onClick}) => {
 
           <div className="flex-1 items-center">
             <div className='flex gap-2 items-center pr-4'>
-              <IconMenu2 className='cursor-pointer' color='orange' onClick={onClick} />
+              <button><IconMenu2 className='cursor-pointer' color='orange' onClick={onClick} /></button>
               <Link className="normal-case text-xl px-2 h-12 w-36" to="/"><img src={Logo}/></Link>
             </div>
             <div className='flex gap-2'>
