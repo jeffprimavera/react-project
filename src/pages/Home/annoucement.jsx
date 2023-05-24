@@ -5,7 +5,7 @@ const Announcement = () => {
     
     // Homepage Announcement
     <section className='py-4'> 
-        <div className="bg-base-200 rounded-3xl p-3 flex">
+        <div className="dark-1 rounded-3xl p-3 flex text-white">
             <span className='block mr-3'>
                 <IconSpeakerphone color='orange' />
             </span>
