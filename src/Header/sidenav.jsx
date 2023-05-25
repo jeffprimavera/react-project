@@ -4,6 +4,7 @@ import { IconChevronRight } from '@tabler/icons-react';
 import TargetIcon from '/images/target-icon.png'
 import PiggyIcon from '/images/pig-icon.png'
 import GiftIcon from '/images/gift-icon.png'
+import WheelIcon from '/images/wheel-icon.png'
 
 const Sidenav = ({show}) => {
 
@@ -46,6 +47,13 @@ const Sidenav = ({show}) => {
               <div className='flex justify-center items-center'>
                 <span className='block'><img className='w-[40px] h-[40px]' src={GiftIcon} alt="" /></span>
                 <p className='whitespace-pre-line w-1/3 leading-4'>Free Box</p>
+              </div>
+            </div>
+
+            <div className='w-[103px] h-14 rounded-lg bg-gradient-warm flex justify-center items-center'>
+              <div className='flex justify-center items-center'>
+                <span className='block'><img className='w-[40px] h-[40px]' src={WheelIcon} alt="" /></span>
+                <p className='whitespace-pre-line w-1/3 leading-4'>Lucky Wheel</p>
               </div>
             </div>
 
