@@ -3,7 +3,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Sidenav from "./Header/sidenav";
 import { Outlet } from "react-router-dom";
-import './index.css'
+import './index.css';
+import './_app.scss';
 
 const App = () => {
 

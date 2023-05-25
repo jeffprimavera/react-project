@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "_variables.scss";
+@import "_mixins.scss";
+
 /*==============================================
 Author: Jeffrey Primavera
 Version:    1
@@ -20,15 +23,9 @@ Template:  Mobile/Web React Template
 
 
 
-
 /******************************** 00 Global Custom CSS ********************************/
 :root {
     --nav-width: 8px;
-}
-
-body {
-    background-color: #0d1015;
-    font-size: 14px;
 }
 .dark-1 {
     background-color: #192028;
@@ -53,9 +50,6 @@ body {
     background-image: -webkit-linear-gradient(left,#192028,#192028),-webkit-linear-gradient(198.08deg,#4dadf3 0%,#fb4988 100%);
     background-image: -moz-linear-gradient(left,#192028,#192028),-moz-linear-gradient(198.08deg,#4dadf3 0%,#fb4988 100%);
     background-image: linear-gradient(to right,#192028,#192028),linear-gradient(251.92deg,#4dadf3 0%,#fb4988 100%);
-}
-.link__color1 {
-    color: #909999 ;
 }
 main {
     transition: 0.5s;

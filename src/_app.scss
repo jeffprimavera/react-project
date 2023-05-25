@@ -1,0 +1,15 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+body {
+    background-color: $bgColorBody;
+    font-size: 14px;
+    font-family: $fonts;
+}
+
+.link__color1 {
+    color: $text-color1 ;
+}
+.dark-1 {
+    background-color: $bgColorDarkBlue1;
+}

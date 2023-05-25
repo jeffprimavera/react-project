@@ -10,7 +10,7 @@ const Sidenav = ({show}) => {
       <div className='flex flex-col min-h-full relative w-full'>
         <div className='h-56 p-2 rounded-lg mt-[20px] bg-blue1 text-white'>
           <div className='flex justify-between items-center'>
-            <p>My VIP Perks</p>
+            <p className='text-red-600'>My VIP Perks</p>
             <Link className='link__color1' to="sports"><span className='cursor-pointer flex justify-end items-center'>More <IconChevronRight width="16" height="16" color='orange' /></span></Link>
           </div>
         </div>
