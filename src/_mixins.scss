@@ -3,3 +3,41 @@
     align-items: center;
     justify-content: center;
 }
+
+
+/** Gradient system **/
+$gradients: () !default;
+$gradients: map-merge((
+    chill: linear-gradient(135deg, #09e485 0%,#0291e3 100%),
+    warm: linear-gradient(135deg, #F2CD48 0%,#FD803F 100%),
+    hot: linear-gradient(135deg, #c31432 0%,#240b36 100%),
+    cold: linear-gradient(135deg, #8019C6 0%,#2F93CC 100%),
+    neuromancer: linear-gradient(135deg, #f953c6 0%,#b91d73 100%)
+), $gradients);
+
+// Gradient backgrounds
+@mixin bg-gradient($parent, $gradient) {
+    #{$parent} {
+      background: $gradient;
+    }
+}
+
+// Gradient text
+@mixin text-gradient($parent, $gradient) {
+    #{$parent} {
+      background-image: $gradient;
+      color:transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+
+// Gradient Classes 
+@each $gradient, $value in $gradients {
+    @include bg-gradient(".bg-gradient-#{$gradient}", $value);
+}
+
+// Text Gradient Classes 
+@each $gradient, $value in $gradients {
+    @include text-gradient(".text-gradient-#{$gradient}", $value);
+  }

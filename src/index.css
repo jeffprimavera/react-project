@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "_variables.scss";
-@import "_mixins.scss";
-
 /*==============================================
 Author: Jeffrey Primavera
 Version:    1
@@ -20,7 +17,6 @@ Template:  Mobile/Web React Template
 ★ 03 Aside Sidenav CSS 
 ★ 04 Top Banner CSS
 ★ 05 Homepage Promo Swiper CSS
-
 
 
 /******************************** 00 Global Custom CSS ********************************/
