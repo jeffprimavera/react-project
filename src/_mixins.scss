@@ -9,10 +9,12 @@
 $gradients: () !default;
 $gradients: map-merge((
     chill: linear-gradient(135deg, #09e485 0%,#0291e3 100%),
-    warm: linear-gradient(135deg, #F2CD48 0%,#FD803F 100%),
-    hot: linear-gradient(135deg, #c31432 0%,#240b36 100%),
+    warm: linear-gradient(135deg, #d53369 0%,#cbad6d 100%),
+    behongo: linear-gradient(135deg, #52c234 0%,#061700 100%),
     cold: linear-gradient(135deg, #8019C6 0%,#2F93CC 100%),
-    neuromancer: linear-gradient(135deg, #f953c6 0%,#b91d73 100%)
+    neuromancer: linear-gradient(135deg, #f953c6 0%,#b91d73 100%),
+    lemontwist: linear-gradient(135deg, #3CA55C 0%,#B5AC49 100%),
+    loveliberty: linear-gradient(135deg, #200122 0%,#6f0000 100%)
 ), $gradients);
 
 // Gradient backgrounds

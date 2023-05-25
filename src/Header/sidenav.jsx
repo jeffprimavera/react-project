@@ -5,6 +5,8 @@ import TargetIcon from '/images/target-icon.png'
 import PiggyIcon from '/images/pig-icon.png'
 import GiftIcon from '/images/gift-icon.png'
 import WheelIcon from '/images/wheel-icon.png'
+import PromoIcon from '/images/promo-icon.png'
+import CoinIcon from '/images/coin-icon.png'
 
 const Sidenav = ({show}) => {
 
@@ -12,7 +14,7 @@ const Sidenav = ({show}) => {
     <>
     <aside className={`flex w-72 box-shadow-8 ${show ? 'show' : null}`}>
       <div className='flex flex-col min-h-full relative w-full'>
-        <div className='h-56 p-4 rounded-lg mt-[20px] bg-blue1 text-white'>
+        <div className='h-60 p-4 rounded-lg mt-[20px] bg-blue1 text-white'>
           <div className='flex justify-between items-center'>
             <p className='text-red-600'>My VIP Perks</p>
             <Link className='link__color1' to="sports">
@@ -26,16 +28,34 @@ const Sidenav = ({show}) => {
           <div className='flex flex-row items-center justify-between mt-1 mb-2'>
 
             <div className='w-[103px] h-14 rounded-lg bg-gradient-chill flex justify-center items-center'>
-              <div className='flex justify-center items-center'>
+              <div className='flex justify-evenly items-center'>
                 <span className='block'><img className='w-[40px] h-[40px]' src={TargetIcon} alt="" /></span>
-                <p className='whitespace-pre-line w-1/3 leading-4'>Task</p>
+                <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Task</p>
               </div>
             </div>
 
             <div className='w-[103px] h-14 rounded-lg bg-gradient-neuromancer flex justify-center items-center'>
-              <div className='flex justify-center items-center'>
+              <div className='flex justify-evenly items-center'>
                 <span className='block'><img className='w-[40px] h-[40px]' src={PiggyIcon} alt="" /></span>
-                <p className='whitespace-pre-line w-1/3 leading-4'>Rake Back</p>
+                <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Rake Back</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div className='flex flex-row items-center justify-between mt-1 mb-2'>
+
+            <div className='w-[103px] h-14 rounded-lg bg-gradient-behongo flex justify-center items-center'>
+              <div className='flex justify-evenly items-center'>
+                <span className='block'><img className='w-[40px] h-[40px]' src={GiftIcon} alt="" /></span>
+                <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Free Box</p>
+              </div>
+            </div>
+
+            <div className='w-[103px] h-14 rounded-lg bg-gradient-warm flex justify-center items-center'>
+              <div className='flex justify-evenly items-center'>
+                <span className='block'><img className='w-[40px] h-[40px]' src={WheelIcon} alt="" /></span>
+                <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Lucky Wheel</p>
               </div>
             </div>
 
@@ -43,17 +63,17 @@ const Sidenav = ({show}) => {
 
           <div className='flex flex-row items-center justify-between mt-1'>
 
-            <div className='w-[103px] h-14 rounded-lg bg-gradient-hot flex justify-center items-center'>
-              <div className='flex justify-center items-center'>
-                <span className='block'><img className='w-[40px] h-[40px]' src={GiftIcon} alt="" /></span>
-                <p className='whitespace-pre-line w-1/3 leading-4'>Free Box</p>
+            <div className='w-[103px] h-14 rounded-lg bg-gradient-lemontwist flex justify-center items-center'>
+              <div className='flex justify-evenly items-center'>
+                <span className='block'><img className='w-[40px] h-[40px]' src={PromoIcon} alt="" /></span>
+                <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Bonus Code</p>
               </div>
             </div>
 
-            <div className='w-[103px] h-14 rounded-lg bg-gradient-warm flex justify-center items-center'>
-              <div className='flex justify-center items-center'>
-                <span className='block'><img className='w-[40px] h-[40px]' src={WheelIcon} alt="" /></span>
-                <p className='whitespace-pre-line w-1/3 leading-4'>Lucky Wheel</p>
+            <div className='w-[103px] h-14 rounded-lg bg-gradient-loveliberty flex justify-center items-center'>
+              <div className='flex justify-evenly items-center'>
+                <span className='block'><img className='w-[40px] h-[40px]' src={CoinIcon} alt="" /></span>
+                <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Bonus</p>
               </div>
             </div>
 
