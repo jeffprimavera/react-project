@@ -11,7 +11,6 @@ import DiceIcon from '/images/dice-icon.png'
 import BasketballIcon from '/images/basketball-icon.png'
 import TrophyIcon from '/images/esports-trophy-icon.png'
 import {navlistData, navlistInnerData } from './navlistdata'
-import { Scrollbars } from 'react-custom-scrollbars';
 
 const Sidenav = ({show}) => {
 
