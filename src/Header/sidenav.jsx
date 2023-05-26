@@ -153,8 +153,6 @@ const Sidenav = ({show}) => {
             
             </div>
 
-            <div>text at the bottom</div>
-
         </div>
       </Scrollbars>            
     </aside>
