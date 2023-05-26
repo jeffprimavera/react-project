@@ -57,5 +57,23 @@ export const navlistInnerData = [
     title: "Promotions",
     link: "/",
   },
+  {
+    id:"2",
+    img: "./images/coin-icon2.png",
+    title: "Referral",
+    link: "/",
+  },
+  {
+    id:"3",
+    img: "./images/crown-icon.png",
+    title: "Vip Club",
+    link: "/",
+  },
+  {
+    id:"4",
+    img: "./images/law-icon.png",
+    title: "Provably Fair",
+    link: "/",
+  },
 ]
 
