@@ -75,5 +75,5 @@ export const navlistInnerData = [
     title: "Provably Fair",
     link: "/",
   },
-]
+] 
 

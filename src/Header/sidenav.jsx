@@ -160,6 +160,6 @@ const Sidenav = ({show}) => {
     </aside>
     </>
   )
-}
+} 
 
 export default Sidenav
