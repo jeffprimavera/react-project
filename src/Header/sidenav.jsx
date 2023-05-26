@@ -18,7 +18,6 @@ const Sidenav = ({show}) => {
   return ( 
     <>
     <aside className={`flex w-72 box-shadow-8 ${show ? 'show' : null}`}>
-      <Scrollbars style={{ width: "100%", height: "100%" }}>
         <div className='flex flex-col min-h-full relative w-full'>
 
             <div className='h-60 p-4 rounded-lg mt-[20px] bg-blue1 text-white'>
@@ -153,8 +152,7 @@ const Sidenav = ({show}) => {
             
             </div>
 
-        </div>
-      </Scrollbars>            
+        </div>           
     </aside>
     </>
   )
