@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx,scss}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'regal-blue': '#ffa500',
+      },
+    },
     screens: {
       mobile: "640px",
       tablet: "960px",

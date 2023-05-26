@@ -10,9 +10,7 @@ import CoinIcon from '/images/coin-icon.png'
 import DiceIcon from '/images/dice-icon.png'
 import {navlistData} from './navlistdata'
 
-
 const Sidenav = ({show}) => {
-
 
   return (
     <>
@@ -95,35 +93,28 @@ const Sidenav = ({show}) => {
             </div>  
             <IconChevronRight width="16" height="16" color='#909999' />
           </div>
-          <div className="collapse-content p-0 pb-0 dark-2 text-white">
-            { navlistData.map((item) => {
-                return (
-                    <ul className='mt-4' key={item.id}>
-                        <li className='px-4 py-3'>
-                          <Link className='sideNavList' to={item.link}>
-                              <img className='w-[18px] mr-3' src={ item.img } alt={item.title} />
-                              <span>{item.title}</span>
-                          </Link>
-                        </li>
-                    </ul>
-                )
-               }
-            )}
+          <div className="collapse-content p-0 pb-0 dark-2 rounded-b-xl text-white">
+            <ul className='mt-1'>
+              { navlistData.map((item) => {
+                  return (
+                    <li className='px-4 py-3 hover:bg-gray-800 transition-all' key={item.id}>
+                      <Link className='sideNavList' to={item.link}>
+                          <img className='w-[18px] mr-3' src={ item.img } alt={item.title} />
+                          <span>{item.title}</span>
+                      </Link>
+                    </li>
+                  )
+                }
+              )}
+            </ul>
           </div>
         </div>
 
         <div>text at the bottom</div>
+        <svg aria-hidden="true" gocusable="false" fill="currentColor" stroke="none"><use xlink:href="/assets/img/symbol-defs.489b8638.svg#Crashgame"></use></svg>
 
       </div>
-      {/* <div className="flex-none">
-        <ul className="menu px-1">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="about">About</Link></li>
-          <li><Link to="contact">Contact</Link></li>
-          <li><Link to="projects">Projects</Link></li>
-          <li><Link to="sports">Sports</Link></li>
-        </ul>
-      </div> */}
+      
     </aside>
     </>
   )
