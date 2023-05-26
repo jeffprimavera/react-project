@@ -15,7 +15,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 
 const Sidenav = ({show}) => {
 
-  return (
+  return ( 
     <>
     <aside className={`flex w-72 box-shadow-8 ${show ? 'show' : null}`}>
       <Scrollbars style={{ width: "100%", height: "100%" }}>
