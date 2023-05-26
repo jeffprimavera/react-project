@@ -7,13 +7,18 @@ import GiftIcon from '/images/gift-icon.png'
 import WheelIcon from '/images/wheel-icon.png'
 import PromoIcon from '/images/promo-icon.png'
 import CoinIcon from '/images/coin-icon.png'
+import DiceIcon from '/images/dice-icon.png'
+import {navlistData} from './navlistdata'
+
 
 const Sidenav = ({show}) => {
+
 
   return (
     <>
     <aside className={`flex w-72 box-shadow-8 ${show ? 'show' : null}`}>
       <div className='flex flex-col min-h-full relative w-full'>
+
         <div className='h-60 p-4 rounded-lg mt-[20px] bg-blue1 text-white'>
           <div className='flex justify-between items-center'>
             <p className='text-red-600'>My VIP Perks</p>
@@ -80,6 +85,35 @@ const Sidenav = ({show}) => {
           </div>
 
         </div>
+
+        <div className="collapse">
+          <input type="checkbox" className="peer" />
+          <div className="collapse-title w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-5">
+            <div className='flex justify-between items-center'>
+              <img className='w-[24px] h-[20px] mr-2' src={DiceIcon} alt="" />
+              Casino
+            </div>  
+            <IconChevronRight width="16" height="16" color='#909999' />
+          </div>
+          <div className="collapse-content p-0 pb-0 dark-2 text-white">
+            { navlistData.map((item) => {
+                return (
+                    <ul className='mt-4' key={item.id}>
+                        <li className='px-4 py-3'>
+                          <Link className='sideNavList' to={item.link}>
+                              <img className='w-[18px] mr-3' src={ item.img } alt={item.title} />
+                              <span>{item.title}</span>
+                          </Link>
+                        </li>
+                    </ul>
+                )
+               }
+            )}
+          </div>
+        </div>
+
+        <div>text at the bottom</div>
+
       </div>
       {/* <div className="flex-none">
         <ul className="menu px-1">

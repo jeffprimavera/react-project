@@ -13,3 +13,12 @@ body {
 .dark-1 {
     background-color: $bgColorDarkBlue1;
 }
+.dark-2 {
+    background-color: $bgColorDarkBlue2;
+}
+.min-40 {
+    min-height: $min-h-40;
+}
+.sideNavList {
+    @include flex-left; 
+}   
