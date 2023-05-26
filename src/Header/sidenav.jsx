@@ -8,6 +8,8 @@ import WheelIcon from '/images/wheel-icon.png'
 import PromoIcon from '/images/promo-icon.png'
 import CoinIcon from '/images/coin-icon.png'
 import DiceIcon from '/images/dice-icon.png'
+import BasketballIcon from '/images/basketball-icon.png'
+import TrophyIcon from '/images/esports-trophy-icon.png'
 import {navlistData} from './navlistdata'
 
 const Sidenav = ({show}) => {
@@ -97,7 +99,7 @@ const Sidenav = ({show}) => {
             <ul className='mt-1'>
               { navlistData.map((item) => {
                   return (
-                    <li className='px-4 py-3 hover:bg-gray-800 transition-all' key={item.id}>
+                    <li className='px-4 py-3 hover:bg-gray-800 transition-all delay-100' key={item.id}>
                       <Link className='sideNavList' to={item.link}>
                           <img className='w-[18px] mr-3' src={ item.img } alt={item.title} />
                           <span>{item.title}</span>
@@ -109,9 +111,30 @@ const Sidenav = ({show}) => {
             </ul>
           </div>
         </div>
+                
+        <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-2'>
+          <Link to="sports">
+            <div className='flex justify-between items-center'>
+              <img className='w-[24px] h-[20px] mr-2' src={BasketballIcon} alt="" />
+              Sports
+            </div>
+          </Link>
+        </div>
+
+        <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-2'>
+          <Link to="sports">
+            <div className='flex justify-between items-center'>
+              <img className='w-[24px] h-[20px] mr-2' src={TrophyIcon} alt="" />
+              Esports
+            </div>
+          </Link>
+        </div>
+
+        <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-5'>
+          sdasda
+        </div>
 
         <div>text at the bottom</div>
-        <svg aria-hidden="true" gocusable="false" fill="currentColor" stroke="none"><use xlink:href="/assets/img/symbol-defs.489b8638.svg#Crashgame"></use></svg>
 
       </div>
       

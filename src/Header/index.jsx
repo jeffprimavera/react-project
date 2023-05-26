@@ -13,7 +13,9 @@ const Header = ({onClick}) => {
 
           <div className="flex-1 items-center">
             <div className='flex gap-2 items-center pr-4'>
-              <button onClick={onClick}><IconMenu2 className='cursor-pointer' color='orange' /></button>
+              <button onClick={onClick}>
+                <IconMenu2 className='cursor-pointer swap-off fill-current' color='orange' />
+              </button>
               <Link className="normal-case text-xl px-2 h-12 w-36" to="/"><img src={Logo}/></Link>
             </div>
             <div className='flex gap-2'>
