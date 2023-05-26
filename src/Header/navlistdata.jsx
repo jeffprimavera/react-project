@@ -48,6 +48,14 @@ export const navlistData = [
     title: "All Games",
     link: "/",
   },
+]
 
+export const navlistInnerData = [
+  {
+    id:"1",
+    img: "./images/promo2-icon.png",
+    title: "Promotions",
+    link: "/",
+  },
 ]
 

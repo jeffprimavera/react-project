@@ -10,7 +10,7 @@ import CoinIcon from '/images/coin-icon.png'
 import DiceIcon from '/images/dice-icon.png'
 import BasketballIcon from '/images/basketball-icon.png'
 import TrophyIcon from '/images/esports-trophy-icon.png'
-import {navlistData} from './navlistdata'
+import {navlistData, navlistInnerData } from './navlistdata'
 
 const Sidenav = ({show}) => {
 
@@ -131,7 +131,17 @@ const Sidenav = ({show}) => {
         </div>
 
         <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-5'>
-          sdasda
+        { navlistInnerData.map((item) => {
+            return (
+              <Link className='sideNavList' to={item.link}>
+                <div className='flex justify-between items-center'>
+                  <img className='w-[24px] h-[20px] mr-2' src={item.img} alt={item.title}/>
+                  {item.title}
+                </div>
+              </Link>
+            )
+          }
+        )}
         </div>
 
         <div>text at the bottom</div>
