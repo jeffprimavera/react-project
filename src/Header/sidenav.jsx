@@ -175,7 +175,7 @@ const Sidenav = ({show}) => {
                 </div>
               </div>
               <div className='w-1/2 bg-blue1'>
-                asdadas
+                $ USD
               </div>
             </div>
 
