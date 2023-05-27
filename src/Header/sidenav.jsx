@@ -10,13 +10,14 @@ import CoinIcon from '/images/coin-icon.png'
 import DiceIcon from '/images/dice-icon.png'
 import BasketballIcon from '/images/basketball-icon.png'
 import TrophyIcon from '/images/esports-trophy-icon.png'
+import HeadphoneIcon from '/images/headset-icon.png'
 import {navlistData, navlistInnerData } from './navlistdata'
 
 const Sidenav = ({show}) => {
 
   return ( 
     <>
-    <aside className={`flex w-72 box-shadow-8 ${show ? 'show' : null}`}>
+    <aside className={`flex w-72 box-shadow-8 overflow-x-hidden overflow-y-auto ${show ? 'show' : null}`}>
         <div className='flex flex-col min-h-full relative w-full'>
 
             <div className='h-60 p-4 rounded-lg mt-[20px] bg-blue1 text-white'>
@@ -86,11 +87,11 @@ const Sidenav = ({show}) => {
 
             </div>
 
-            <div className="collapse">
+            <div className="collapse ovf-inherit">
               <input type="checkbox" className="peer" />
               <div className="collapse-title w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-5">
                 <div className='flex justify-between items-center'>
-                  <img className='w-[24px] h-[20px] mr-2' src={DiceIcon} alt="" />
+                  <img className='w-[24px] mr-2' src={DiceIcon} alt="" />
                   Casino
                 </div>  
                 <IconChevronRight width="16" height="16" color='#909999' />
@@ -115,7 +116,7 @@ const Sidenav = ({show}) => {
             <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-2'>
               <Link to="sports">
                 <div className='flex justify-between items-center'>
-                  <img className='w-[24px] h-[20px] mr-2' src={BasketballIcon} alt="" />
+                  <img className='w-[24px] mr-2' src={BasketballIcon} alt="" />
                   Sports
                 </div>
               </Link>
@@ -124,7 +125,7 @@ const Sidenav = ({show}) => {
             <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-2'>
               <Link to="sports">
                 <div className='flex justify-between items-center'>
-                  <img className='w-[24px] h-[20px] mr-2' src={TrophyIcon} alt="" />
+                  <img className='w-[24px] mr-2' src={TrophyIcon} alt="" />
                   Esports
                 </div>
               </Link>
@@ -146,9 +147,30 @@ const Sidenav = ({show}) => {
                   }
                 )}
               </ul>
+            </div>
 
+            <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-2 my-5'>
+              <Link to="sports">
+                <div className='flex justify-between items-center'>
+                  <img className='w-[24px] mr-2' src={HeadphoneIcon} alt="" />
+                  Live Support
+                </div>
+              </Link>
+            </div>
 
-            
+            <div className='flex justify-between items-center gap-2 w-full'>
+              <div className='w-1/2'>
+                <div className="dropdown dropdown-top bg-blue1 rounded-xl w-full">
+                  <label tabIndex={0} className="btn m-1 bg-blue1">Click</label>
+                  <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a>Item 1</a></li>
+                    <li><a>Item 2</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div className='w-1/2 bg-blue1'>
+                asdadas
+              </div>
             </div>
 
         </div>           

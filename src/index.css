@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scabar-primary) var(--scabar-secondary);
+}
+*::-webkit-scrollbar {
+    width: 3px;
+}
+::-webkit-scrollbar-track {
+    background: var(--scabar-primary);
+    border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scabar-secondary);
+    border-radius: 14px;
+    border: 5px solid var(--scabar-primary);
+}
+
 /*==============================================
 Author: Jeffrey Primavera
 Version:    1
@@ -22,6 +39,8 @@ Template:  Mobile/Web React Template
 /******************************** 00 Global Custom CSS ********************************/
 :root {
     --nav-width: 8px;
+    --scabar-primary: rgba(12, 26, 42, 0.288);
+    --scabar-secondary: #0c1a2a;
 }
 .dark-1 {
     background-color: #192028;

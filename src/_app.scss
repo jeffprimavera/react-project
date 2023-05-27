@@ -21,4 +21,7 @@ body {
 }
 .sideNavList {
     @include flex-left; 
-}   
+}  
+.ovf-inherit {
+    overflow: $overflow-inherit;
+} 
