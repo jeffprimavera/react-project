@@ -28,14 +28,8 @@ const Header = ({onClick}) => {
             </div>
           </div>
           <div className="flex gap-2">
-          <button className="btn bg__pink">Login</button>
-          <button className="btn bg__lightblue">Sign Up</button>
-            {/* <ul className="menu menu-horizontal px-1">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="about">About</Link></li>
-              <li><Link to="contact">Contact</Link></li>
-              <li><Link to="projects">Projects</Link></li>
-            </ul> */}
+          <button className="btn bg__pink text-white">Login</button>
+          <button className="btn bg__lightblue text-white">Sign Up</button>
           </div>
 
         </div>

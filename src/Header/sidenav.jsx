@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import { IconChevronRight } from '@tabler/icons-react';
+import { IconChevronRight, IconWorld } from '@tabler/icons-react';
 import TargetIcon from '/images/target-icon.png'
 import PiggyIcon from '/images/pig-icon.png'
 import GiftIcon from '/images/gift-icon.png'
@@ -149,7 +149,7 @@ const Sidenav = ({show}) => {
               </ul>
             </div>
 
-            <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-2 my-5'>
+            <div className='w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg my-5'>
               <Link to="sports">
                 <div className='flex justify-between items-center'>
                   <img className='w-[24px] mr-2' src={HeadphoneIcon} alt="" />
@@ -161,10 +161,16 @@ const Sidenav = ({show}) => {
             <div className='flex justify-between items-center gap-2 w-full'>
               <div className='w-1/2'>
                 <div className="dropdown dropdown-top bg-blue1 rounded-xl w-full">
-                  <label tabIndex={0} className="btn m-1 bg-blue1">Click</label>
+                  <label tabIndex={0} className="h-10 m-1 bg-blue1 flex justify-between items-center text-xs font-medium px-3 cursor-pointer">
+                    <div className='flex justify-start items-center gap-2'>
+                      <IconWorld width="16" height="16" color='#909999' />
+                      English
+                    </div>
+                    <IconChevronRight width="16" height="16" color='#909999' />
+                  </label>
                   <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
+                    <li><Link>Portuguese</Link></li>
+                    <li><Link>中文繁體</Link></li>
                   </ul>
                 </div>
               </div>

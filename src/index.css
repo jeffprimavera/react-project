@@ -89,7 +89,7 @@ header {
 aside {
     height: 100%;
     background: #11171d;
-    padding: 80px 20px 0 20px;
+    padding: 80px 20px 20px 20px;
     position: fixed;
     z-index: 103;
     left: -230px;
