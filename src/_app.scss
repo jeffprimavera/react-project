@@ -80,6 +80,10 @@ header {
     aside {
         width: 65px;
         left: 0;
+        overflow: unset;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
     }
 
     .desktop__sidenav {
@@ -88,6 +92,16 @@ header {
 
     .desktop__mini__sidenav {
         display: block;
+
+        .vip__perls {
+
+            ul {
+                top: -5px;
+                left: -5px;
+                z-index: 20;
+            }
+
+        }
     }
 
 }
