@@ -8,6 +8,10 @@ const Home = () => {
     <Homepagehero />
     <Homepageslider />
     <Announcement />
+
+    <Homepagehero />
+    <Homepageslider />
+    <Announcement />
   </>
   )
 }

@@ -13,9 +13,9 @@ const App = () => {
   const toggleShow = () => setShow(prev => !prev)
 
   return (
-    <div className={`flex flex-col h-screen w-screen pl-72 duration-300 ${show ? null : 'space-toggle'} `}>
+    <div className={`flex flex-col h-screen w-screen pl-72 transition-all delay-300 ${show ? null : 'space-toggle'} `}>
       <Header onClick={toggleShow} />
-      <main className="container mx-auto flex flex-col overflow-auto min-h-full px-10 pb-4 z-0 pt-28">
+      <main className="container mx-auto flex flex-col min-h-screen px-10 pb-4 z-0 pt-28">
         <Outlet />
         <Footer /> 
       </main>

@@ -11,20 +11,16 @@ import DiceIcon from '/images/dice-icon.png'
 import BasketballIcon from '/images/basketball-icon.png'
 import TrophyIcon from '/images/esports-trophy-icon.png'
 import HeadphoneIcon from '/images/headset-icon.png'
-import MiniSidenav from './miniSidenav';
 import {navlistData, navlistInnerData } from './navlistdata'
 
-function Sidenav({ show }) {
+const bigSidenav = ({show}) => {
 
-  return (
-    <>
-
-      <aside className={`flex w-72 box-shadow-8 overflow-x-hidden overflow-y-auto ${show ? 'show' : null}`}>
+  return ( 
+    <aside className={`flex w-72 box-shadow-8 overflow-x-hidden overflow-y-auto ${show ? 'show' : null}`}>
 
         <div className='desktop__sidenav flex flex-col min-h-full relative w-full'>
 
             <div className='h-60 p-4 rounded-lg mt-[20px] bg-blue1 text-white'>
-              
               <div className='flex justify-between items-center'>
                 <p className='text-red-600'>My VIP Perks</p>
                 <Link className='link__color1' to="sports">
@@ -39,14 +35,14 @@ function Sidenav({ show }) {
 
                 <div className='w-[103px] h-14 rounded-lg bg-gradient-chill flex justify-center items-center'>
                   <div className='flex justify-evenly items-center'>
-                    <span className='block'><img className='w-[40px]' src={TargetIcon} alt="" /></span>
+                    <span className='block'><img className='w-[40px] h-[40px]' src={TargetIcon} alt="" /></span>
                     <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Task</p>
                   </div>
                 </div>
 
                 <div className='w-[103px] h-14 rounded-lg bg-gradient-neuromancer flex justify-center items-center'>
                   <div className='flex justify-evenly items-center'>
-                    <span className='block'><img className='w-[40px]' src={PiggyIcon} alt="" /></span>
+                    <span className='block'><img className='w-[40px] h-[40px]' src={PiggyIcon} alt="" /></span>
                     <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Rake Back</p>
                   </div>
                 </div>
@@ -57,14 +53,14 @@ function Sidenav({ show }) {
 
                 <div className='w-[103px] h-14 rounded-lg bg-gradient-behongo flex justify-center items-center'>
                   <div className='flex justify-evenly items-center'>
-                    <span className='block'><img className='w-[40px]' src={GiftIcon} alt="" /></span>
+                    <span className='block'><img className='w-[40px] h-[40px]' src={GiftIcon} alt="" /></span>
                     <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Free Box</p>
                   </div>
                 </div>
 
                 <div className='w-[103px] h-14 rounded-lg bg-gradient-warm flex justify-center items-center'>
                   <div className='flex justify-evenly items-center'>
-                    <span className='block'><img className='w-[40px]' src={WheelIcon} alt="" /></span>
+                    <span className='block'><img className='w-[40px] h-[40px]' src={WheelIcon} alt="" /></span>
                     <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Lucky Wheel</p>
                   </div>
                 </div>
@@ -75,14 +71,14 @@ function Sidenav({ show }) {
 
                 <div className='w-[103px] h-14 rounded-lg bg-gradient-lemontwist flex justify-center items-center'>
                   <div className='flex justify-evenly items-center'>
-                    <span className='block'><img className='w-[40px]' src={PromoIcon} alt="" /></span>
+                    <span className='block'><img className='w-[40px] h-[40px]' src={PromoIcon} alt="" /></span>
                     <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Bonus Code</p>
                   </div>
                 </div>
 
                 <div className='w-[103px] h-14 rounded-lg bg-gradient-loveliberty flex justify-center items-center'>
                   <div className='flex justify-evenly items-center'>
-                    <span className='block'><img className='w-[40px]' src={CoinIcon} alt="" /></span>
+                    <span className='block'><img className='w-[40px] h-[40px]' src={CoinIcon} alt="" /></span>
                     <p className='whitespace-pre-line w-1/3 leading-4 text-xs'>Bonus</p>
                   </div>
                 </div>
@@ -135,14 +131,14 @@ function Sidenav({ show }) {
               </Link>
             </div>
 
-            <div className='w-full bg-blue1 link__color1 rounded-lg mt-5'>
-              <ul className=''>
+            <div className='w-full bg-blue1 link__color1 pl-4 pr-4 py-2 rounded-lg mt-5'>
+              <ul>
                 { navlistInnerData.map((item) => {
                     return (
-                      <li key={item.id} className='py-3 hover:bg-gray-800 transition-all delay-100 px-4'>
+                      <li key={item.id} className='py-3 hover:bg-gray-800 transition-all delay-100'>
                         <Link className='sideNavList' to={item.link}>
                           <div className='flex justify-between items-center'>
-                            <img className='w-[24px] mr-2' src={item.img} alt={item.title}/>
+                            <img className='w-[24px] h-[20px] mr-2' src={item.img} alt={item.title}/>
                             {item.title}
                           </div>
                         </Link>
@@ -185,12 +181,8 @@ function Sidenav({ show }) {
 
         </div>
 
-        <MiniSidenav />
-
-      </aside>
-
-    </>
-  );
+    </aside>
+  )
 } 
 
-export default Sidenav
+export default bigSidenav

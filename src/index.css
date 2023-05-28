@@ -1,3 +1,22 @@
+/*==============================================
+Author: Jeffrey Primavera
+Version:    1
+Created:    13 May 2023
+Last updated:    
+Template:  Mobile/Web React Template
+================================================*/
+
+/*
+[Table of Contents]
+★ 00 Global Custom CSS
+★ 01 Header CSS
+★ 03 Aside Sidenav CSS 
+★ 04 Top Banner CSS
+★ 05 Homepage Promo Swiper CSS
+*/
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,23 +37,6 @@
     border-radius: 14px;
     border: 5px solid var(--scabar-primary);
 }
-
-/*==============================================
-Author: Jeffrey Primavera
-Version:    1
-Created:    13 May 2023
-Last updated:    
-Template:  Mobile/Web React Template
-================================================*/
-
-/*
-[Table of Contents]
-★ 00 Global Custom CSS
-★ 01 Header CSS
-★ 03 Aside Sidenav CSS 
-★ 04 Top Banner CSS
-★ 05 Homepage Promo Swiper CSS
-
 
 /******************************** 00 Global Custom CSS ********************************/
 :root {
@@ -83,6 +85,20 @@ header {
 }
 .space-toggle {
     padding-left:  calc(var(--nav-width) + 60px );
+}
+
+/** Responsive Sidenav **/
+.space-toggle aside {
+    width: 65px;
+    left: 0;
+}
+.space-toggle .desktop__sidenav,
+.desktop__mini__sidenav {
+    display: none;
+}
+
+.space-toggle .desktop__mini__sidenav {
+    display: block;
 }
 
 /******************************** 03 Aside Sidenav CSS ********************************/
