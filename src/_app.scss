@@ -1,6 +1,29 @@
+/*==============================================
+Author: Jeffrey Primavera
+Version:    1
+Created:    13 May 2023
+Last updated:    
+Template:  Mobile/Web React Template
+================================================*/
+
+/*
+[Table of Contents]
+★ 00 Global Custom CSS
+★ 01 Header CSS
+★ 02 Aside Sidenav CSS 
+★ 03 Top Banner CSS
+★ 04 Homepage Promo Swiper CSS
+*/
+
+
 @import "_variables.scss";
 @import "_mixins.scss";
 
+/******************************** 00 Global Custom CSS ********************************/
+:root {
+    --nav-width: 8px;
+    background-color: #0d1015;
+}
 body {
     background-color: $bgColorBody;
     font-size: 14px;
@@ -16,6 +39,9 @@ body {
 .dark-2 {
     background-color: $bgColorDarkBlue2;
 }
+.bg-blue1 {
+    background-color: $bgBlue1;
+}
 .min-40 {
     min-height: $min-h-40;
 }
@@ -24,4 +50,98 @@ body {
 }  
 .ovf-inherit {
     overflow: $overflow-inherit;
-} 
+}
+.border__line__btn {
+    border-color: transparent;
+    background-clip: padding-box,border-box;
+    background-origin: padding-box,border-box;
+    background-image: -webkit-linear-gradient(left,#192028,#192028),-webkit-linear-gradient(198.08deg,#4dadf3 0%,#fb4988 100%);
+    background-image: -moz-linear-gradient(left,#192028,#192028),-moz-linear-gradient(198.08deg,#4dadf3 0%,#fb4988 100%);
+    background-image: linear-gradient(to right,#192028,#192028),linear-gradient(251.92deg,#4dadf3 0%,#fb4988 100%);
+}
+
+/******************************** 01 Header CSS ********************************/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 104;
+}
+.show {
+    left: 0;
+}
+
+/** Responsive Sidenav **/
+.space-toggle {
+
+    padding-left:  calc(var(--nav-width) + 60px );
+
+    aside {
+        width: 65px;
+        left: 0;
+    }
+
+    .desktop__sidenav {
+        display: none;
+    }
+
+    .desktop__mini__sidenav {
+        display: block;
+    }
+
+}
+
+.desktop__mini__sidenav {
+    display: none;
+}
+
+/******************************** 02 Aside Sidenav CSS ********************************/
+aside {
+    height: 100%;
+    background: #11171d;
+    padding: 80px 20px 20px 20px;
+    position: fixed;
+    z-index: 103;
+    left: -230px;
+    top: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+/******************************** 03 Top Banner CSS ********************************/
+.top__banner {
+    background: url(/images/top-banner.png) no-repeat 0 0;
+    width: 100%;
+    background-size: 100%;
+    zoom: 1;
+
+    .title__wrapper  {
+        line-height: 62px;
+
+        span > span {
+            color: #F53077;
+        }
+    }
+}
+
+/******************************** 04 Homepage Promo Swiper CSS ********************************/
+.hp__promo__swiper {
+
+    i {
+        background: #16202c;
+        height: 50px; 
+    }
+
+    .icon-arrow-long-left  {
+        border-radius: 8px 0 0 8px;
+        margin: auto 0;
+        width: 24px
+    }
+
+    .icon-arrow-long-right {
+        border-radius: 8px 0 0 8px;
+        margin: auto 0;
+        width: 24px
+    }
+}

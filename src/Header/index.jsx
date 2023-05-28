@@ -24,12 +24,12 @@ const Header = ({onClick}) => {
                   <IconBallFootball className='pointer' color='orange' /> Sports
                 </button>
               </Link>
-              <button className="btn gap-1"><IconTrophy className='pointer' color='orange' /> Esports</button>
+              <button className="btn gap-1 gradientBorder"><IconTrophy className='pointer' color='orange' /> Esports</button>
             </div>
           </div>
           <div className="flex gap-2">
-          <button className="btn bg__pink text-white">Login</button>
-          <button className="btn bg__lightblue text-white">Sign Up</button>
+          <button className="btn bg-gradient-shifter text-white">Login</button>
+          <button className="btn bg-gradient-blueraspberry text-white">Sign Up</button>
           </div>
 
         </div>
