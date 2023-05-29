@@ -166,19 +166,19 @@ function Sidenav({ show }) {
               <div className='w-1/2'>
                 <div className="dropdown dropdown-top bg-blue1 rounded-lg w-full">
                   <label tabIndex={0} className="h-11 flex justify-between items-center text-xs font-medium px-3 cursor-pointer">
-                    <div className='flex justify-start items-center gap-2'>
+                    <div className='flex justify-start items-center gap-2 link__color1'>
                       <IconWorld width="16" height="16" color='#909999' />
                       English
                     </div>
                     <IconChevronRight width="16" height="16" color='#909999' />
                   </label>
-                  <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><Link>Portuguese</Link></li>
-                    <li><Link>中文繁體</Link></li>
+                  <ul tabIndex={0} className="dropdown-content menu p-2 shadow rounded-box w-52 bg-gray-800">
+                    <li><Link className='text-white'>Portuguese</Link></li>
+                    <li><Link className='text-white'>中文繁體</Link></li>
                   </ul>
                 </div>
               </div>
-              <div className='w-1/2 bg-blue1 h-11 flex justify-center items-center rounded-lg'>
+              <div className='w-1/2 bg-blue1 h-11 flex justify-center items-center rounded-lg link__color1'>
                 $ USD
               </div>
             </div>

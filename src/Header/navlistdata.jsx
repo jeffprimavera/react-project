@@ -77,3 +77,55 @@ export const navlistInnerData = [
   },
 ] 
 
+export const miniNavlistVIP = [
+  {
+    id:"1",
+    img: "./images/pig-icon.png",
+    link: "/",
+  },
+  {
+    id:"2",
+    img: "./images/gift-icon.png",
+    link: "/",
+  },
+  {
+    id:"3",
+    img: "./images/wheel-icon.png",
+    link: "/",
+  },
+  {
+    id:"4",
+    img: "./images/promo-icon.png",
+    link: "/",
+  },
+  {
+    id:"5",
+    img: "./images/coin-icon.png",
+    link: "/",
+  }
+] 
+
+export const miniNavLinks = [
+  {
+    id:"1",
+    img: "./images/dice-icon.png",
+    title: "Live Casino",
+    ttip: "Live Casino",
+    link: "/",
+  },
+  {
+    id:"2",
+    img: "./images/basketball-icon.png",
+    title: "Sports",
+    ttip: "Sports",
+    link: "/",
+  },
+  {
+    id:"3",
+    img: "./images/esports-trophy-icon.png",
+    title: "Esports",
+    ttip: "Esports",
+    link: "/projects",
+  },
+]
+

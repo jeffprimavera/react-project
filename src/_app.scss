@@ -23,6 +23,8 @@ Template:  Mobile/Web React Template
 :root {
     --nav-width: 8px;
     background-color: #0d1015;
+    --scrollprimary: #0c1014;
+    --scrollsecondary: #3d4451;
 }
 body {
     background-color: $bgColorBody;
@@ -60,6 +62,22 @@ body {
     background-image: linear-gradient(to right,#192028,#192028),linear-gradient(251.92deg,#4dadf3 0%,#fb4988 100%);
 }
 
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--secondary);
+  }
+  *::-webkit-scrollbar {
+    width: 7px;
+  }
+  *::-webkit-scrollbar-track {
+    background: var(--primary);
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--secondary);
+    border-radius: 80px;
+    border: 3px solid var(--primary);
+  }
+
 /******************************** 01 Header CSS ********************************/
 header {
     position: fixed;
@@ -84,6 +102,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        padding: 80px 0 0 0;
     }
 
     .desktop__sidenav {
@@ -96,8 +115,8 @@ header {
         .vip__perls {
 
             ul {
-                top: -5px;
-                left: -5px;
+                top: -10px;
+                left: 5px;
                 z-index: 20;
             }
 
