@@ -98,7 +98,8 @@ header {
     aside {
         width: 65px;
         left: 0;
-        overflow: unset;
+        overflow-y: auto;
+        overflow-x: hidden;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -120,6 +121,10 @@ header {
                 z-index: 20;
             }
 
+        }
+
+        .box__link {
+            margin: 0 auto;
         }
     }
 

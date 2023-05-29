@@ -25,11 +25,11 @@ const MiniSidenav = () => {
             </div>
         </div>
 
-        <div className='py-2 mt-5 w-[55px]'>
+        <div className='mt-5 w-[55px] box__link py-7'>
             <ul>
                 { miniNavLinks.map((item) => {
                     return (
-                        <li key={item.id} className='bg-blue1 p-3 rounded-lg mb-2 tooltip tooltip-right' data-tip={item.ttip}>
+                        <li key={item.id} className='bg-blue1 p-3 rounded-lg mb-2'>
                             <Link to={item.link} className='flex justify-center items-center'>
                                 <img src={item.img} />
                             </Link>
@@ -40,11 +40,11 @@ const MiniSidenav = () => {
             </ul>
         </div>
 
-        <div className='py-2 mt-5 w-[55px]'>
+        <div className='py-2 mt-5 w-[55px] box__link pb-5'>
             <ul className='bg-blue1 rounded-lg py-2'>
                 { navlistInnerData.map((item) => {
                     return (
-                        <li key={item.id} className='tooltip tooltip-right block py-3' data-tip={item.title}>
+                        <li key={item.id} className='block py-3'>
                             <Link to={item.link} className='flex justify-center items-center'>
                                 <img className='w-[30px]' src={item.img} />
                             </Link>
@@ -55,15 +55,16 @@ const MiniSidenav = () => {
             </ul>
         </div>
 
-        <div>
+        <div className='py-2 mt-5 w-[55px] box__link pb-5'>
             <ul>
                 <li>
-                    <a href="#!"><img src={HeadphoneIcon} alt="" /></a>
+                    <a href="#!"><img className='w-[30px]' src={HeadphoneIcon} alt="" /></a>
                 </li>
             </ul>
         </div>
 
     </div>
+    
     
     )
   }
