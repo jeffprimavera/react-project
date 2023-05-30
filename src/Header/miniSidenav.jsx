@@ -1,8 +1,35 @@
+import React, {useState} from 'react'
 import TargetIcon from '/images/target-icon.png'
 import HeadphoneIcon from '/images/headset-icon.png'
 import {Link} from 'react-router-dom'
 import { miniNavlistVIP, miniNavLinks, navlistInnerData } from './navlistdata'
+import Modal from "react-modal";
+
+const customStyles = {
+    overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgb(0 0 0 / 75%)'
+    },
+    content: {
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "#192028",
+      width: 680,
+    },
+};
+
 const MiniSidenav = () => {
+
+    const [modalOpen, setModalOpen] = useState(false);
+
     return (
     
     <div className='desktop__mini__sidenav'>
@@ -55,13 +82,29 @@ const MiniSidenav = () => {
             </ul>
         </div>
 
-        <div className='py-2 mt-5 w-[55px] box__link pb-5'>
+        <div className='py-2 mt-5 w-[55px] box__link'>
             <ul>
+                <li className='pb-5'>
+                    <Link to=''><img className='w-[30px]' src={HeadphoneIcon} alt="" /></Link>
+                </li>
+                <li className='pb-5'>
+                    <Link to='' className='link__color1 font-semibold flex justify-center items-center'><span>EN</span></Link>
+                </li>
                 <li>
-                    <a href="#!"><img className='w-[30px]' src={HeadphoneIcon} alt="" /></a>
+                    <Link to='' className='link__color1 font-semibold flex justify-center items-center' onClick={setModalOpen}><span>USD</span></Link>
                 </li>
             </ul>
         </div>
+
+        <Modal
+            closeTimeoutMS={200}
+            isOpen={modalOpen}
+            onRequestClose={() => setModalOpen(false)}
+            style={customStyles} >
+            <div>Login/Signup</div>
+
+            <button onClick={() => setModalOpen(false)}>Close Modal</button>
+        </Modal>
 
     </div>
     
