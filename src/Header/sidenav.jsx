@@ -12,9 +12,12 @@ import BasketballIcon from '/images/basketball-icon.png'
 import TrophyIcon from '/images/esports-trophy-icon.png'
 import HeadphoneIcon from '/images/headset-icon.png'
 import MiniSidenav from './miniSidenav';
+import CurrencyModal from './currrencyModal'
 import {navlistData, navlistInnerData } from './navlistdata'
 
 function Sidenav({ show }) {
+
+  const [modalCurrencyOpen, setModalCurrencyOpen] = useState(false);
 
   return (
     <>
@@ -178,7 +181,7 @@ function Sidenav({ show }) {
                   </ul>
                 </div>
               </div>
-              <div className='w-1/2 bg-blue1 h-11 flex justify-center items-center rounded-lg link__color1'>
+              <div className='w-1/2 bg-blue1 h-11 flex justify-center items-center rounded-lg link__color1 cursor-pointer' onClick={setModalCurrencyOpen}>
                 $ USD
               </div>
             </div>
@@ -186,6 +189,7 @@ function Sidenav({ show }) {
         </div>
 
         <MiniSidenav />
+        <CurrencyModal />
 
       </aside>
 

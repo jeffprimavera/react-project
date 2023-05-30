@@ -53,6 +53,9 @@ body {
 .ovf-inherit {
     overflow: $overflow-inherit;
 }
+.border__1 {
+    border: 1px rgb(255 255 255 / 24%) solid;
+}
 .border__line__btn {
     border-color: transparent;
     background-clip: padding-box,border-box;
@@ -157,6 +160,20 @@ header {
                 }
             }
         }
+    }
+
+}
+
+.currency__wrapper {
+
+    .font-semibold.text-2xl {
+        padding-bottom: 25px;
+        border-bottom: 1px rgb(255 255 255 / 16%) solid;
+        margin-bottom: 25px;
+
+    }
+    .link__color1 {
+        padding-bottom: 20px;
     }
 
 }

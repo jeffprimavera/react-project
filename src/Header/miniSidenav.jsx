@@ -3,32 +3,11 @@ import TargetIcon from '/images/target-icon.png'
 import HeadphoneIcon from '/images/headset-icon.png'
 import {Link} from 'react-router-dom'
 import { miniNavlistVIP, miniNavLinks, navlistInnerData } from './navlistdata'
-import Modal from "react-modal";
-
-const customStyles = {
-    overlay: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgb(0 0 0 / 75%)'
-    },
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-      backgroundColor: "#192028",
-      width: 680,
-    },
-};
+import CurrencyModal from './currrencyModal'
 
 const MiniSidenav = () => {
 
-    const [modalOpen, setModalOpen] = useState(false);
+    const [modalCurrencyOpen, setModalCurrencyOpen] = useState(false);
 
     return (
     
@@ -91,20 +70,12 @@ const MiniSidenav = () => {
                     <Link to='' className='link__color1 font-semibold flex justify-center items-center'><span>EN</span></Link>
                 </li>
                 <li>
-                    <Link to='' className='link__color1 font-semibold flex justify-center items-center' onClick={setModalOpen}><span>USD</span></Link>
+                    <Link to='' className='link__color1 font-semibold flex justify-center items-center' onClick={setModalCurrencyOpen}><span>USD</span></Link>
                 </li>
             </ul>
         </div>
-
-        <Modal
-            closeTimeoutMS={200}
-            isOpen={modalOpen}
-            onRequestClose={() => setModalOpen(false)}
-            style={customStyles} >
-            <div>Login/Signup</div>
-
-            <button onClick={() => setModalOpen(false)}>Close Modal</button>
-        </Modal>
+        
+        <CurrencyModal modalCurrencyOpen={modalCurrencyOpen} />
 
     </div>
     
