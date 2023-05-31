@@ -70,12 +70,12 @@ const MiniSidenav = () => {
                     <Link to='' className='link__color1 font-semibold flex justify-center items-center'><span>EN</span></Link>
                 </li>
                 <li>
-                    <Link to='' className='link__color1 font-semibold flex justify-center items-center' onClick={setModalCurrencyOpen}><span>USD</span></Link>
+                    <Link to='' className='link__color1 font-semibold flex justify-center items-center' onClick={ () => {setModalCurrencyOpen(true);}}><span>USD</span></Link>
                 </li>
             </ul>
         </div>
         
-        <CurrencyModal modalCurrencyOpen={modalCurrencyOpen} />
+        {modalCurrencyOpen && <CurrencyModal />}
 
     </div>
     
