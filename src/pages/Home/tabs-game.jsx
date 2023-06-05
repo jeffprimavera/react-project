@@ -6,10 +6,10 @@ import OriginalTabsGame from './OriginalTabs'
 const TabsGame = () => {
     return (
     
-        <section>
-            <Tabs>
+        <section className='py-6'>
+            <Tabs className='tabs__wrapper'>
 
-                <TabList>
+                <TabList className='gap-3'>
                     <Tab>Title 1</Tab>
                     <Tab>Title 2</Tab>
                 </TabList>
