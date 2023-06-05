@@ -37,5 +37,5 @@ export const sliderImageData = [
         "img": "/images/slider-7.png",
         "title": "Slider 7"
     }
-  ]
+]
   
