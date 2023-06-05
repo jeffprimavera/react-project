@@ -10,9 +10,7 @@ const Sports = () => {
     <div className="text-white">
       <p>THis is the Sports page</p>
       <button className="btn openModalBtn" onClick={() => {setOpenModal(true)}}>Open Modal</button>
-
-      { openModal && <SportsModal closeModal={setOpenModal} />}
-
+      { openModal && <SportsModal closeModal={() => setOpenModal(false)} />}
     </div>
   )
 }

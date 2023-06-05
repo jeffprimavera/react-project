@@ -1,38 +1,41 @@
-[
+export const sliderImageData = [
+
     {
         "id": 1,
         "link": "/about",
         "img": "/images/slider-1.png",
-        "alt": "Slider 1"
+        "title": "Slider 1"
     },
     {
         "id": 2,
+        "link": "/sports",
         "img": "/images/slider-2.png",
-        "alt": "Slider 2"
+        "title": "Slider 2"
     },
     {
         "id": 3,
         "img": "/images/slider-3.png",
-        "alt": "Slider 3"
+        "title": "Slider 3"
     },
     {
         "id": 4,
         "img": "/images/slider-4.png",
-        "alt": "Slider 4"
+        "title": "Slider 4"
     },
     {
         "id": 5,
         "img": "/images/slider-5.png",
-        "alt": "Slider 5"
+        "title": "Slider 5"
     },
     {
         "id": 6,
         "img": "/images/slider-6.png",
-        "alt": "Slider 6"
+        "title": "Slider 6"
     },
     {
         "id": 7,
         "img": "/images/slider-7.png",
-        "alt": "Slider 7"
+        "title": "Slider 7"
     }
-]
+  ]
+  

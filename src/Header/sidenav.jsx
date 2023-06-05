@@ -181,7 +181,7 @@ function Sidenav({ show }) {
                   </ul>
                 </div>
               </div>
-              <div className='w-1/2 bg-blue1 h-11 flex justify-center items-center rounded-lg link__color1 cursor-pointer' onClick={setModalCurrencyOpen}>
+              <div className='w-1/2 bg-blue1 h-11 flex justify-center items-center rounded-lg link__color1 cursor-pointer' onClick={ () => {setModalCurrencyOpen(true)}}>
                 $ USD
               </div>
             </div>
@@ -189,7 +189,7 @@ function Sidenav({ show }) {
         </div>
 
         <MiniSidenav />
-        <CurrencyModal />
+        {modalCurrencyOpen && <CurrencyModal isOpen={modalCurrencyOpen} handleModalOpen={setModalCurrencyOpen} />}
 
       </aside>
 

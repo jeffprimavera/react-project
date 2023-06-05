@@ -23,16 +23,16 @@ const customStyles = {
     },
 };
 
-const CurrencyModal = () => {
-
-    const [modalCurrencyOpen, setModalCurrencyOpen] = useState(false);
+const CurrencyModal = ({isOpen, handleModalOpen}) => {
 
     return (
     
         <Modal
             closeTimeoutMS={200}
-            isOpen={modalCurrencyOpen}
-            onRequestClose={() => setModalCurrencyOpen(false)}
+            isOpen={isOpen}
+            ariaHideApp={false}
+            shouldCloseOnOverlayClick={true}
+            onRequestClose={() => handleModalOpen(false)}
             style={customStyles} 
             >
             <div className='p-3 currency__wrapper'>
@@ -48,10 +48,10 @@ const CurrencyModal = () => {
                     <div className='btn gap-2'>₫ <strong>VND</strong></div>
                 </div>
             </div>
-            <IconX className='absolute right-2 top-2 w-6 h-6 rounded-full cursor-pointer p-1 border__1' onClick={() => setModalCurrencyOpen(false)} color='orange' />
+            <IconX className='absolute right-2 top-2 w-6 h-6 rounded-full cursor-pointer p-1 border__1' onClick={() => handleModalOpen(false)} color='orange' />
         </Modal>
     
     )
-  }
+}
   
-  export default CurrencyModal
+export default CurrencyModal

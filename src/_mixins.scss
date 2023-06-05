@@ -23,9 +23,10 @@ $gradients: map-merge((
     cold: linear-gradient(135deg, #8019C6 0%,#2F93CC 100%),
     neuromancer: linear-gradient(135deg, #f953c6 0%,#b91d73 100%),
     lemontwist: linear-gradient(135deg, #3CA55C 0%,#B5AC49 100%),
-    loveliberty: linear-gradient(135deg, #200122 0%,#6f0000 100%),
+    loveliberty: linear-gradient(135deg, #e30000 0%,#a54343 100%),
     shifter: linear-gradient(135deg, #bc4e9c 0%,#f80759 100%),
-    blueraspberry: linear-gradient(135deg, #00B4DB 0%,#0083B0 100%)
+    blueraspberry: linear-gradient(135deg, #00B4DB 0%,#0083B0 100%),
+    breeze: linear-gradient(135deg, #efff00 0%,#ffd400 100%),
 ), $gradients);
 
 // Gradient backgrounds

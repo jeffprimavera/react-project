@@ -1,6 +1,7 @@
 import Homepageslider from "./homepage-slider"
 import Homepagehero from "./homepage-hero"
 import Announcement from "./annoucement"
+import HomeBanners from "./homebanners"
 
 const Home = () => {
   return (
@@ -8,22 +9,7 @@ const Home = () => {
     <Homepagehero />
     <Homepageslider />
     <Announcement />
-
-    <Homepagehero />
-    <Homepageslider />
-    <Announcement />
-
-    <Homepagehero />
-    <Homepageslider />
-    <Announcement />
-
-    <Homepagehero />
-    <Homepageslider />
-    <Announcement />
-
-    <Homepagehero />
-    <Homepageslider />
-    <Announcement />
+    <HomeBanners />
   </>
   )
 }

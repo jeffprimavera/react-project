@@ -13,6 +13,7 @@ Template:  Mobile/Web React Template
 ★ 02 Aside Sidenav CSS 
 ★ 03 Top Banner CSS
 ★ 04 Homepage Promo Swiper CSS
+★ 05 Homepage Banners CSS
 */
 
 
@@ -75,12 +76,13 @@ body.ReactModal__Body--open {
                 border-radius: 10px !important;
                 border: 1px rgb(255 255 255 / 26%) solid !important;
             }
-        }
-        .ReactModal__Overlay--after-open {
-            opacity: 1;
-        }
-        .ReactModal__Overlay--before-close {
-            opacity: 0;
+
+            &.ReactModal__Overlay--after-open {
+                opacity: 1;
+            }
+            &.ReactModal__Overlay--before-close {
+                opacity: 0;
+            }
         }
     }
 }
@@ -216,18 +218,49 @@ aside {
 
     i {
         background: #16202c;
-        height: 50px; 
+        height: 50px;
+        width: 24px;
+        margin: auto 0;
+        
+        &.icon-arrow-long-left  {
+            border-radius: 8px 0 0 8px;
+        }
+
+        &.icon-arrow-long-right {
+            border-radius: 0 8px 8px 0;
+            
+        }
+    }
+    
+}
+
+/******************************** 05 Homepage Banners CSS ********************************/
+.hp__banners__bg {
+    width: 100%;
+    zoom: 1;
+    height: 300px;
+
+    &.casino__bg {
+        background: url(/images/hp-casinno-banner.png) no-repeat;
+        background-size: cover;
     }
 
-    .icon-arrow-long-left  {
-        border-radius: 8px 0 0 8px;
-        margin: auto 0;
-        width: 24px
+    &.sports__bg {
+        background: url(/images/hp-sports-banner.png) no-repeat;
+        background-size: cover;
     }
 
-    .icon-arrow-long-right {
-        border-radius: 8px 0 0 8px;
-        margin: auto 0;
-        width: 24px
+    .hpb__content__wrapper {
+
+        padding-top: 50px;
+
+        span {
+            span {
+                padding-top: 10px;
+            }
+        }
+
     }
+
+    
 }

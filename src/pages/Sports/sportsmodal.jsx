@@ -1,11 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 
 function SportsModal({closeModal}) {
 
     return (    
         <div>
-            Modal
-            <button className='btn' onClick={() => {closeModal(false)}}>Close Modal</button>
+            <div>
+                Modal
+                <button className='btn' onClick={() => {closeModal(false)}}>Close Modal</button>
+            </div>
         </div>
     )
 

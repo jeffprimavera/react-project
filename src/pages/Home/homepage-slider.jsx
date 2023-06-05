@@ -3,7 +3,7 @@ import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper";
-import IMAGES from '../../images.json';
+import {sliderImageData} from './sliderImageData'
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import {Link} from 'react-router-dom'
 
@@ -28,12 +28,12 @@ const Homepageslider = () => {
             nextEl: '.review-swiper-button-next',
             prevEl: '.review-swiper-button-prev',
         }}
-        modules={[Navigation, Autoplay ]} >
+        modules={[Navigation, Autoplay]} >
             
-               { IMAGES && IMAGES.map((item) => {
+               { sliderImageData.map((item) => {
                 return (
                     <SwiperSlide key={item.id} >
-                        <Link to={item.link}><img src={ item.img } alt={item.alt} /></Link>
+                        <Link to={item.link}><img src={ item.img } alt={item.title} /></Link>
                     </SwiperSlide>
                 )
                }

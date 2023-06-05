@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import { IconMenu2, IconTrophy, IconBallFootball, IconX } from '@tabler/icons-react';
+import { IconMenu2, IconTrophy, IconBallFootball } from '@tabler/icons-react';
 import Logo from  '/images/logo.png'
+import LoginModal from './loginModal'
 
 const Header = ({onClick}) => {
+
+  const [modalLoginOpen, setModalLoginOpen] = useState(false);
 
   return (
     <>
@@ -28,13 +31,16 @@ const Header = ({onClick}) => {
             </div>
           </div>
           <div className="flex gap-2">
-          <button className="btn bg-gradient-shifter text-white">Login</button>
+          <button className="btn bg-gradient-shifter text-white" onClick={ () => {setModalLoginOpen(true)}}>Login</button>
           <button className="btn bg-gradient-blueraspberry text-white">Sign Up</button>
           </div>
 
         </div>
       </nav>
     </header>
+
+    {modalLoginOpen && <LoginModal isOpen={modalLoginOpen} handleModalOpen={setModalLoginOpen} />}
+
     </>
   )
 }
