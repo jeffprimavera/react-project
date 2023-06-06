@@ -271,7 +271,24 @@ aside {
         border: 0;
         
         li {
-            
+            background: #192028;
+            color: #909999;
+            margin-right: 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+
+            &.react-tabs__tab--selected {
+                border-color: transparent;
+                background-clip: padding-box, border-box;
+                background-origin: padding-box, border-box;
+                background-image: linear-gradient(to right, #192028, #192028), linear-gradient(251.92deg, #4dadf3 0%, #fb4988 100%);
+                color: #fff;
+                border-bottom: 1px transparent solid;
+            }
+            &:focus:after {
+                display: none;
+            }
+
         }
     }
 }

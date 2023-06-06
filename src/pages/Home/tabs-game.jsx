@@ -1,28 +1,51 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import AllTabsGame from './AllTabs'
+import { IconSearch } from '@tabler/icons-react';
+import AllTabsGame from './AllTabs' 
 import OriginalTabsGame from './OriginalTabs'
+import SlotsTabsGame from './SlotsTabs'
+import LiveCasinoTabsGame from './LiveTabs'
 
 const TabsGame = () => {
     return (
     
         <section className='py-6'>
-            <Tabs className='tabs__wrapper'>
+            <div className='flex justify-between items-start'>
+                <Tabs className='tabs__wrapper'>
+                    
+                    <TabList>
+                        <Tab>All Games</Tab>
+                        <Tab>Bet Originals</Tab>
+                        <Tab>Slots</Tab>
+                        <Tab>Live Casino</Tab>
+                    </TabList>
 
-                <TabList className='gap-3'>
-                    <Tab>Title 1</Tab>
-                    <Tab>Title 2</Tab>
-                </TabList>
+                    <TabPanel>
+                        <AllTabsGame />
+                    </TabPanel>
 
-                <TabPanel>
-                    <AllTabsGame />
-                </TabPanel>
+                    <TabPanel>
+                        <OriginalTabsGame />
+                    </TabPanel>
 
-                <TabPanel>
-                    <OriginalTabsGame />
-                </TabPanel>
+                    <TabPanel>
+                        <SlotsTabsGame />
+                    </TabPanel>
 
-            </Tabs>
+                    <TabPanel>
+                        <LiveCasinoTabsGame />
+                    </TabPanel>
+
+                </Tabs>
+
+                <div className='search__wrapper cursor-pointer w-96'>
+                    <div className='flex justify-start items-center bg-blue1 py-3 px-5 rounded-lg'>
+                        <IconSearch width="16" height="16" color='#909999' />
+                        <div className='link__color1 pl-3'>Game name | Provider</div>
+                    </div>
+                </div>
+
+            </div>
         </section>
     
     )
