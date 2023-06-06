@@ -294,9 +294,20 @@ aside {
 }
 
 .game__wrapper {
-    width: calc(((100% + 27px) / 1) - 27px);
 
     .game__box {
         
+        figure {
+
+            figcaption {
+                background: rgb(32 42 57 / 85%);
+                
+            }
+        }
+        &:hover figcaption {
+            opacity: 1;
+            visibility: visible;
+        }
     }
+    
 }
