@@ -292,3 +292,11 @@ aside {
         }
     }
 }
+
+.game__wrapper {
+    width: calc(((100% + 27px) / 1) - 27px);
+
+    .game__box {
+        
+    }
+}

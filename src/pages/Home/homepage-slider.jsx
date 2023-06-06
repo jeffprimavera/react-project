@@ -3,7 +3,7 @@ import 'swiper/css';
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper";
-import {sliderImageData} from './sliderImageData'
+import {sliderImageData} from './ImageData'
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import {Link} from 'react-router-dom'
 
