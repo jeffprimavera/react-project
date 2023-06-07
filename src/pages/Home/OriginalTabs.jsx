@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 
 const OriginalTabsGame = () => {
-    return (
+    return ( 
     
-        <section>
+        <section className='pb-6'>
             <div>
                 <div className='game__title pt-7 pb-4'>
                     <h3 className='text-white text-2xl'>Bet Originals</h3>
@@ -13,9 +13,9 @@ const OriginalTabsGame = () => {
                 <div className='game__wrapper relative overflow-hidden w-full'>
                     <div className='grid grid-cols-6 m-0 p-0 gap-4'>
 
-                        { OriginalGames.map((item) => {
+                        { OriginalGames.map((item, i) => {
                             return (
-                                <div className='game__box'>
+                                <div className='game__box' key={i}>
                                     <figure key={item.id} className='relative rounded-xl overflow-hidden'>
                                         <div className='img__thumb'>
                                             <img className='w-full' src={ item.img } alt={item.title} />
