@@ -67,7 +67,7 @@ const SlotsTabsGame = () => {
                                                 </div> 
                                                 <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
                                                     <div className='text-center text-lg '>
-                                                        <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[225px]'>
+                                                        <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[225px]' target='_blank'>
                                                             <p className='text-white block'>{game.game_name_en}</p>
                                                             <span className='flex justify-center items-center w-20 h-20 rounded-full'>
                                                                 <IconPlayerPlayFilled className='text-white' /> 
