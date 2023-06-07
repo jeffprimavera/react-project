@@ -17,7 +17,7 @@ const SlotsTabsGame = () => {
             const response = await fetch(
               'http://player.staging.smash.t1t.in/pub/get_frontend_games/5632'
             );
-    
+                
             if (response.ok) {
               const data = await response.json();
               setGamesData(data.game_list);
