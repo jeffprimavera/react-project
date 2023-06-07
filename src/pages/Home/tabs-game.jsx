@@ -38,12 +38,12 @@ const TabsGame = () => {
 
                 </Tabs>
 
-                <div className='search__wrapper cursor-pointer w-96'>
+                {/* <div className='search__wrapper cursor-pointer w-96'>
                     <div className='flex justify-start items-center bg-blue1 py-3 px-5 rounded-lg'>
                         <IconSearch width="16" height="16" color='#909999' />
                         <div className='link__color1 pl-3'>Game name | Provider</div>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </section>

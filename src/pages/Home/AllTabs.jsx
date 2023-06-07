@@ -1,9 +1,11 @@
+import OriginalTabsGame from "./OriginalTabs"
+
 const AllTabsGame = () => {
     return (
-    
-        <section>
-            All Tabs Games
-        </section>
+        
+        <>
+            <OriginalTabsGame />
+        </>
     
     )
   }
