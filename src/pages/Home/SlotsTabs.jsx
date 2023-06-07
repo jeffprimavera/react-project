@@ -56,31 +56,31 @@ const SlotsTabsGame = () => {
                 }}
                 modules={[Navigation]}
                 >
-                     {filteredGames ? (
-                        <SwiperSlide>
-                            <div className='game__box'>
+                    {filteredGames ? (
+                            <>
                                 {filteredGames.map((game) => (
-                                    
-                                    <figure key={game.game_unique_id} className='relative rounded-xl overflow-hidden'>
-                                        <div className='img__thumb'>
-                                            <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
-                                        </div> 
-                                        <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
-                                            <div className='text-center text-lg '>
-                                                <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[225px]'>
-                                                    <p className='text-white block'>{game.game_name_en}</p>
-                                                    <span className='flex justify-center items-center w-20 h-20 rounded-full'>
-                                                        <IconPlayerPlayFilled className='text-white' /> 
-                                                    </span>
-                                                    <p className='text-white block text-xs link__color1'>{game.provider_name}</p>
-                                                </Link>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                    
+                                    <SwiperSlide key={game.game_unique_id}>
+                                        <div className='game__box'>
+                                            <figure className='relative rounded-xl overflow-hidden'>
+                                                <div className='img__thumb'>
+                                                    <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
+                                                </div> 
+                                                <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
+                                                    <div className='text-center text-lg '>
+                                                        <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[225px]'>
+                                                            <p className='text-white block'>{game.game_name_en}</p>
+                                                            <span className='flex justify-center items-center w-20 h-20 rounded-full'>
+                                                                <IconPlayerPlayFilled className='text-white' /> 
+                                                            </span>
+                                                            <p className='text-white block text-xs link__color1'>{game.provider_name}</p>
+                                                        </Link>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </SwiperSlide>
                                 ))}
-                            </div>
-                        </SwiperSlide>
+                            </>
                     ) : (
                         <p>Loading...</p>
                     )}
