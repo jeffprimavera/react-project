@@ -5,6 +5,7 @@ import AllTabsGame from './AllTabs'
 import OriginalTabsGame from './OriginalTabs'
 import SlotsTabsGame from './SlotsTabs'
 import LiveCasinoTabsGame from './LiveTabs'
+import SlotsAllGame from './SlotsAll';
 
 const TabsGame = () => {
     return (
@@ -39,7 +40,7 @@ const TabsGame = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <SlotsTabsGame />
+                        <SlotsAllGame />
                     </TabPanel>
 
                     <TabPanel>

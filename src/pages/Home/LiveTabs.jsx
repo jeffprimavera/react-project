@@ -63,7 +63,9 @@ const LiveCasinoTabsGame = () => {
                 ))}
               </div>
           ) : (
-            <p>Loading...</p>
+            <>
+              <p>Loading...</p>
+            </>
           )}
         </div>
         {gameData.length < totalGames && (
