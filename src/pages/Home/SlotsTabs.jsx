@@ -48,7 +48,7 @@ const SlotsTabsGame = () => {
 
                 <Swiper
                 spaceBetween={15}
-                slidesPerView={6}
+                slidesPerView={7}
                 loop={true}
                 navigation={{
                     nextEl: '.review-swiper-button-next',
@@ -67,12 +67,12 @@ const SlotsTabsGame = () => {
                                                 </div> 
                                                 <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
                                                     <div className='text-center text-lg '>
-                                                        <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[225px]' target='_blank'>
-                                                            <p className='text-white block'>{game.game_name_en}</p>
-                                                            <span className='flex justify-center items-center w-20 h-20 rounded-full'>
+                                                        <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[180px]' target='_blank'>
+                                                            <p className='text-white block text-sm'>{game.game_name_en}</p>
+                                                            <span className='flex justify-center items-center w-14 h-14 rounded-full'>
                                                                 <IconPlayerPlayFilled className='text-white' /> 
                                                             </span>
-                                                            <p className='text-white block text-xs link__color1'>{game.provider_name}</p>
+                                                            <p className='block text-xs text-yellow-200'>{game.provider_name}</p>
                                                         </Link>
                                                     </div>
                                                 </figcaption>
@@ -82,7 +82,10 @@ const SlotsTabsGame = () => {
                                 ))}
                             </>
                     ) : (
-                        <p>Loading...</p>
+                        <>
+                            <p>Loading...</p>
+                            <span className='loading loading-bars loading-lg'></span>
+                        </>
                     )}
                     
                 </Swiper>  

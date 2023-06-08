@@ -11,7 +11,7 @@ const OriginalTabsGame = () => {
                     <h3 className='text-white text-2xl'>Bet Originals</h3>
                 </div>
                 <div className='game__wrapper relative overflow-hidden w-full'>
-                    <div className='grid grid-cols-6 m-0 p-0 gap-4'>
+                    <div className='grid grid-cols-7 m-0 p-0 gap-4'>
 
                         { OriginalGames.map((item, i) => {
                             return (
@@ -22,12 +22,12 @@ const OriginalTabsGame = () => {
                                         </div> 
                                         <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
                                             <div className='text-center text-lg '>
-                                                <Link to={item.link} className='flex justify-between flex-col h-[225px]'>
-                                                    <p className='text-white block'>{ item.gamename }</p>
-                                                    <span className='flex justify-center items-center w-20 h-20 rounded-full'>
+                                                <Link to={item.link} className='flex justify-between flex-col h-[180px]'>
+                                                    <p className='text-white block text-sm'>{ item.gamename }</p>
+                                                    <span className='flex justify-center items-center w-14 h-14 rounded-full'>
                                                         <IconPlayerPlayFilled className='text-white' /> 
                                                     </span>
-                                                    <p className='text-white block text-xs link__color1'>{ item.owner }</p>
+                                                    <p className='block text-xs text-yellow-200'>{ item.owner }</p>
                                                 </Link>
                                             </div>
                                         </figcaption>
