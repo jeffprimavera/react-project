@@ -29,6 +29,7 @@ const SlotsAllGames = () => {
 
   return (
     <div>
+        
       <select value={selectedProvider} onChange={handleProviderChange}>
         <option value="">Select a Provider</option>
         <option value="5632/slots">Pragmatic Play</option>
@@ -46,6 +47,7 @@ const SlotsAllGames = () => {
           </ul>
         </div>
       )}
+
     </div>
   );
 };
