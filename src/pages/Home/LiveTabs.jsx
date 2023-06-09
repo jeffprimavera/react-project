@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
+import { LineWave } from  'react-loader-spinner'
 
 const LiveCasinoTabsGame = () => {
   const [gameData, setGameData] = useState([]);
@@ -64,7 +65,24 @@ const LiveCasinoTabsGame = () => {
               </div>
           ) : (
             <>
-              <p>Loading...</p>
+              <div className='flex justify-center items-center w-full py-40'>
+                <div>
+                  <p className='text-white'>Loading</p>
+                  <LineWave
+                    className="flex justify-center items-center"
+                    height="100"
+                    width="100"
+                    color="#12c2e9"
+                    ariaLabel="line-wave"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={true}
+                    firstLineColor=""
+                    middleLineColor=""
+                    lastLineColor=""
+                  />
+                </div>
+              </div>
             </>
           )}
         </div>

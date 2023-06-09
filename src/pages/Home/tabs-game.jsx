@@ -8,6 +8,7 @@ import LiveCasinoTabsGame from './LiveTabs'
 import SlotsAllGame from './SlotsAll';
 
 const TabsGame = () => {
+    
     return (
     
         <section className='py-6'>
