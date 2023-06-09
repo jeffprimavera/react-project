@@ -4,6 +4,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Sports from './pages/Sports'
+import Slots from './pages/Slots'
 import App from './App'
 
 const Router = ( ) => {
@@ -26,6 +27,10 @@ const Router = ( ) => {
         <Route
           path="sports"
           element={<Sports />}
+        />
+        <Route
+          path="slots"
+          element={<Slots />}
         />
       </Route>
     </Routes>

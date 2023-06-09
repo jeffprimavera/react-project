@@ -10,7 +10,7 @@ export const navlistData = [
     id:"2",
     img: "./images/slots-icon.png",
     title: "Slots",
-    link: "/",
+    link: "/slots",
   },
   {
     id:"3",

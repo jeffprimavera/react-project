@@ -11,7 +11,7 @@ import DiceIcon from '/images/dice-icon.png'
 import BasketballIcon from '/images/basketball-icon.png'
 import TrophyIcon from '/images/esports-trophy-icon.png'
 import HeadphoneIcon from '/images/headset-icon.png'
-import MiniSidenav from './miniSidenav';
+// import MiniSidenav from './miniSidenav';
 import CurrencyModal from './currrencyModal'
 import {navlistData, navlistInnerData } from './navlistdata'
 
@@ -188,7 +188,7 @@ function Sidenav({ show }) {
 
         </div>
 
-        <MiniSidenav />
+        {/* <MiniSidenav /> */}
         {modalCurrencyOpen && <CurrencyModal isOpen={modalCurrencyOpen} handleModalOpen={setModalCurrencyOpen} />}
 
       </aside>
