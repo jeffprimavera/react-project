@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
-import { LineWave } from  'react-loader-spinner'
+import { LineWave } from 'react-loader-spinner';
+import { IconSearch } from '@tabler/icons-react';
+import Homepagehero2 from '../Home/homepage-hero2';
 
 const SlotsAllGames = () => {
   const [selectedProvider, setSelectedProvider] = useState('all-games');
@@ -11,35 +13,30 @@ const SlotsAllGames = () => {
   const [visibleData, setVisibleData] = useState([]);
   const [loadCount, setLoadCount] = useState(21);
   const [isLoading, setIsLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true); // Set isLoading to true when fetching data
+        setIsLoading(true);
+        let url = 'http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots';
         if (selectedProvider === 'all-games') {
-          const response = await axios.get(
-            'http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots'
-          );
-          const data = response.data;
-          setSelectedData(data.game_list);
+          url += `&search=${searchQuery}`;
         } else if (selectedProvider) {
-          const response = await axios.get(
-            `http://player.staging.smash.t1t.in/pub/get_frontend_games/${selectedProvider}`
-          );
-          const data = response.data;
-          setSelectedData(data.game_list);
-        } else {
-          setSelectedData([]);
+          url += `/${selectedProvider}?search=${searchQuery}`;
         }
-        setIsLoading(false); // Set isLoading to false after fetching data
+        const response = await axios.get(url);
+        const data = response?.data?.game_list || [];
+        setSelectedData(data);
+        setIsLoading(false);
       } catch (error) {
         console.log('Error fetching data:', error);
-        setIsLoading(false); // Set isLoading to false if there is an error
+        setIsLoading(false);
       }
     };
 
     fetchData();
-  }, [selectedProvider]);
+  }, [selectedProvider, searchQuery]);
 
   useEffect(() => {
     sortData();
@@ -85,12 +82,26 @@ const SlotsAllGames = () => {
   };
 
   const handleLoadMore = () => {
-    setLoadCount(loadCount + 21);
+    setLoadCount((prevLoadCount) => prevLoadCount + 21);
   };
 
   return (
-    <div>
+    <>
+      <Homepagehero2 />
+
       <section className='pb-6'>
+        <div className='search__wrapper cursor-pointer w-96'>
+          <div className='flex justify-start items-center bg-blue1 py-1 px-5 rounded-lg'>
+            <IconSearch width='16' height='16' color='#909999' />
+            <input 
+            type="text" 
+            placeholder="Game name | Provider" 
+            className="input input-bordered w-full max-w-xs bg-blue1 link__color1"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            />
+          </div>
+        </div>
         <div>
           <div className='flex justify-between items-center'>
             <div className='game__title pt-7 pb-4'>
@@ -98,7 +109,11 @@ const SlotsAllGames = () => {
               <span className='loading loading-ring loading-md'></span>
             </div>
             <div className='gameprovider__dropdown'>
-              <select value={selectedProvider} onChange={handleProviderChange} className='select select-infi max-w-xs mr-4 dark-1 link__color1'>
+              <select
+                value={selectedProvider}
+                onChange={handleProviderChange}
+                className='select select-infi max-w-xs mr-4 dark-1 link__color1'
+              >
                 <option value='all-games'>All</option>
                 <option value='5632/slots'>Pragmatic Play</option>
                 <option value='5936/slots'>Caleta</option>
@@ -111,30 +126,34 @@ const SlotsAllGames = () => {
                 <option value='6009/slots'>PgSoft</option>
                 <option value='6126/slots'>Amatic</option>
               </select>
-              <select value={sortOrder} onChange={handleSortOrderChange} className='select select-infi max-w-xs dark-1 link__color1'>
+              <select
+                value={sortOrder}
+                onChange={handleSortOrderChange}
+                className='select select-infi max-w-xs dark-1 link__color1'
+              >
                 <option value='asc'>Sort A-Z</option>
                 <option value='desc'>Sort Z-A</option>
               </select>
             </div>
           </div>
           <div className='game__wrapper relative overflow-hidden w-full'>
-            {isLoading ? ( // Display loading text if isLoading is true
+            {isLoading ? (
               <>
                 <div className='flex justify-center items-center w-full py-40'>
                   <div>
                     <p className='text-white'>Loading</p>
                     <LineWave
-                      className="flex justify-center items-center"
-                      height="100"
-                      width="100"
-                      color="#12c2e9"
-                      ariaLabel="line-wave"
+                      className='flex justify-center items-center'
+                      height='100'
+                      width='100'
+                      color='#12c2e9'
+                      ariaLabel='line-wave'
                       wrapperStyle={{}}
-                      wrapperClass=""
+                      wrapperClass=''
                       visible={true}
-                      firstLineColor=""
-                      middleLineColor=""
-                      lastLineColor=""
+                      firstLineColor=''
+                      middleLineColor=''
+                      lastLineColor=''
                     />
                   </div>
                 </div>
@@ -143,7 +162,7 @@ const SlotsAllGames = () => {
               visibleData.length > 0 && (
                 <div className='grid grid-cols-7 m-0 p-0 gap-4'>
                   {visibleData.map((game, index) => (
-                    <div className='game__box {game.game_name_en}' key={`${game.game_unique_id}_${index}`}>
+                    <div className='game__box' key={`${game.game_unique_id}_${index}`}>
                       <figure className='relative rounded-xl overflow-hidden'>
                         <div className='img__thumb'>
                           <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
@@ -172,7 +191,7 @@ const SlotsAllGames = () => {
             {visibleData.length < selectedData.length && (
               <button
                 onClick={handleLoadMore}
-                className='load-more-button btn bg-gradient-shifter w-[182px] h-[45px] m-auto block mt-9'
+                className='load-more-button btn bg-gradient-shifter w-[182px] h-[45px] m-auto block mt-9 text-white'
               >
                 Load More
               </button>
@@ -180,7 +199,7 @@ const SlotsAllGames = () => {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 
