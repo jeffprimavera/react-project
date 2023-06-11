@@ -1,11 +1,16 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from "react";
-import {Link} from 'react-router-dom';
-import { IconPlayerPlayFilled } from '@tabler/icons-react';
-import { Navigation } from "swiper";
 import 'swiper/css';
 import "swiper/css/navigation";
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import PragmaticPlayTop from './SlotsTopGames/PragmaticplayTops'
+import CaletaSlotsTops from './SlotsTopGames/CaletaTops';
+import KAGamingSlotsTops from './SlotsTopGames/KAGamingTops';
+import NetentSlotsTops from './SlotsTopGames/NetentTops';
+import JokerSlotsTops from './SlotsTopGames/JokerTops';
+import MicrogamingSlotsTops from './SlotsTopGames/MicrogamingTops';
+import PGSoftSlotsTops from './SlotsTopGames/PGSoftTops';
 
 const SlotsTabsGame = () => {
 
@@ -40,55 +45,43 @@ const SlotsTabsGame = () => {
         <section className='pb-6'>
             <div>
 
-                <div className='game__title pt-7 pb-4'>
-                    <h3 className='text-white text-2xl'>Slots</h3>
-                </div>
-
                 <div className='game__wrapper relative w-full'>
 
-                <Swiper
-                spaceBetween={15}
-                slidesPerView={7}
-                loop={true}
-                navigation={{
-                    nextEl: '.review-swiper-button-next',
-                    prevEl: '.review-swiper-button-prev',
-                }}
-                modules={[Navigation]}
-                >
-                    {filteredGames ? (
-                            <>
-                                {filteredGames.map((game) => (
-                                    <SwiperSlide key={game.game_unique_id}>
-                                        <div className='game__box'>
-                                            <figure className='relative rounded-xl overflow-hidden'>
-                                                <div className='img__thumb'>
-                                                    <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
-                                                </div> 
-                                                <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
-                                                    <div className='text-center text-lg '>
-                                                        <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[180px]' target='_blank'>
-                                                            <p className='text-white block text-sm'>{game.game_name_en}</p>
-                                                            <span className='flex justify-center items-center w-14 h-14 rounded-full'>
-                                                                <IconPlayerPlayFilled className='text-white' /> 
-                                                            </span>
-                                                            <p className='block text-xs text-yellow-200'>{game.provider_name}</p>
-                                                        </Link>
-                                                    </div>
-                                                </figcaption>
-                                            </figure>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </>
-                    ) : (
-                        <>
-                            <p>Loading...</p>
-                            <span className='loading loading-bars loading-lg'></span>
-                        </>
-                    )}
-                    
-                </Swiper>  
+                    <Tabs className='tabs__wrapper w-full'>
+
+                    <TabPanel>
+                        <section>
+                            <PragmaticPlayTop/>
+                        </section>
+                    </TabPanel>
+
+                    <TabPanel>
+                        <CaletaSlotsTops/>
+                    </TabPanel>
+
+                    <TabPanel>
+                        <KAGamingSlotsTops/>
+                    </TabPanel>
+
+                    <TabPanel>
+                        <JokerSlotsTops/>
+                    </TabPanel>
+
+                    <TabPanel>
+                        <PGSoftSlotsTops/>
+                    </TabPanel>
+
+                    <div className='flex justify-between items-center'>
+                        <TabList>
+                            <Tab>Pragmatic Play</Tab>
+                            <Tab>Caleta</Tab>
+                            <Tab>KA Gaming</Tab>
+                            <Tab>Joker</Tab>
+                            <Tab>PGSoft</Tab>
+                        </TabList>
+                    </div>
+
+                    </Tabs>
 
                 </div>
 

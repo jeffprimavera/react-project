@@ -5,7 +5,6 @@ import AllTabsGame from './AllTabs'
 import OriginalTabsGame from './OriginalTabs'
 import SlotsTabsGame from './SlotsTabs'
 import LiveCasinoTabsGame from './LiveTabs'
-import SlotsAllGame from './SlotsAll';
 
 const TabsGame = () => {
     
@@ -24,11 +23,15 @@ const TabsGame = () => {
                         </TabList>
                         
                         <div className='search__wrapper cursor-pointer w-96'>
-                            <div className='flex justify-start items-center bg-blue1 py-3 px-5 rounded-lg'>
-                                <IconSearch width="16" height="16" color='#909999' />
-                                <div className='link__color1 pl-3'>Game name | Provider</div>
+                            <div className='flex justify-start items-center bg-blue1 py-1 px-5 rounded-lg'>
+                                <IconSearch width='16' height='16' color='#909999' />
+                                <input 
+                                type="text" 
+                                placeholder="Game name | Provider" 
+                                className="input input-bordered w-full max-w-xs bg-blue1 link__color1"
+                                />
                             </div>
-                        </div>
+                         </div>
 
                     </div>
 
@@ -41,7 +44,7 @@ const TabsGame = () => {
                     </TabPanel>
 
                     <TabPanel>
-                        <SlotsAllGame />
+                        <SlotsTabsGame />
                     </TabPanel>
 
                     <TabPanel>
@@ -49,7 +52,6 @@ const TabsGame = () => {
                     </TabPanel>
 
                 </Tabs>
-
             </div>
         </section>
     

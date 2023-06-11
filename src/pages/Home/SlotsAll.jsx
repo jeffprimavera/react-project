@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import { LineWave } from 'react-loader-spinner';
 import { IconSearch } from '@tabler/icons-react';
-import Homepagehero2 from '../Home/homepage-hero2';
 
 const SlotsAllGames = () => {
   const [selectedProvider, setSelectedProvider] = useState('all-games');
@@ -18,25 +17,30 @@ const SlotsAllGames = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        setIsLoading(true);
-        let url = 'http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots';
+        setIsLoading(true); // Set isLoading to true when fetching data
+        let response;
         if (selectedProvider === 'all-games') {
-          url += `&search=${searchQuery}`;
+          response = await axios.get(
+            'http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots'
+          );
         } else if (selectedProvider) {
-          url += `/${selectedProvider}?search=${searchQuery}`;
+          response = await axios.get(
+            `http://player.staging.smash.t1t.in/pub/get_frontend_games/${selectedProvider}`
+          );
+        } else {
+          setSelectedData([]);
         }
-        const response = await axios.get(url);
         const data = response?.data?.game_list || [];
         setSelectedData(data);
-        setIsLoading(false);
+        setIsLoading(false); // Set isLoading to false after fetching data
       } catch (error) {
         console.log('Error fetching data:', error);
-        setIsLoading(false);
+        setIsLoading(false); // Set isLoading to false if there is an error
       }
     };
 
     fetchData();
-  }, [selectedProvider, searchQuery]);
+  }, [selectedProvider]);
 
   useEffect(() => {
     sortData();
@@ -87,7 +91,6 @@ const SlotsAllGames = () => {
 
   return (
     <>
-      <Homepagehero2 />
 
       <section className='pb-6'>
         <div className='search__wrapper cursor-pointer w-96'>
@@ -137,7 +140,7 @@ const SlotsAllGames = () => {
             </div>
           </div>
           <div className='game__wrapper relative overflow-hidden w-full'>
-            {isLoading ? (
+            {isLoading ? ( // Display loading text if isLoading is true
               <>
                 <div className='flex justify-center items-center w-full py-40'>
                   <div>
