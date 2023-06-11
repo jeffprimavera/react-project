@@ -1,12 +1,17 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom'
-import { IconMenu2, IconTrophy, IconBallFootball } from '@tabler/icons-react';
+import { IconMenu2, IconTrophy, IconBallFootball, IconX } from '@tabler/icons-react';
 import Logo from  '/images/logo.png'
 import LoginModal from './loginModal'
 
 const Header = ({onClick}) => {
 
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
+  const [isIconX, setIsIconX] = useState(false);
+
+  const handleClick = () => {
+    setIsIconX(!isIconX);
+  };
 
   return (
     <>
@@ -16,9 +21,15 @@ const Header = ({onClick}) => {
 
           <div className="flex-1 items-center">
             <div className='flex gap-2 items-center pr-4'>
-              <button onClick={onClick}>
-                <IconMenu2 className='cursor-pointer swap-off fill-current' color='orange' />
-              </button>
+              <div onClick={onClick}>
+                <button onClick={handleClick}>
+                  {isIconX ? (
+                    <IconX className='cursor-pointer swap-off fill-current' color='orange' />
+                  ) : (
+                    <IconMenu2 className='cursor-pointer swap-off fill-current' color='orange' />
+                  )}
+                </button>
+              </div>
               <Link className="normal-case text-xl px-2 h-12 w-36" to="/"><img src={Logo}/></Link>
             </div>
             <div className='flex gap-2'>
