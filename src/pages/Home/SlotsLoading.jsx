@@ -8,7 +8,7 @@ const SlotsTopLoading = () => {
         <>
             <div className='flex justify-center items-center w-full py-10'>
                 <div>
-                    <p className='text-white'>Loading</p>
+                    <p className='text-white text-left pl-2'>Loading</p>
                     <LineWave
                     className='flex justify-center items-center'
                     height='100'
