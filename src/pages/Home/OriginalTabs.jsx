@@ -7,8 +7,12 @@ const OriginalTabsGame = () => {
     
         <section className='pb-6'>
             <div>
-                <div className='game__title pt-7 pb-4'>
-                    <h3 className='text-white text-2xl'>Bet Originals</h3>
+                <div className='flex justify-start items-center game__title pt-7 pb-4'>
+                    <h3 className='text-white text-2xl pr-4'>Bet Originals</h3>
+                    <div className='flex justify-start items-center dark-1 p-1 px-3 rounded-full'>
+                        <p>⚡ RTP up to</p>
+                        <span className='block pl-1 yellow-orange font-semibold'>99.02%</span>
+                    </div>
                 </div>
                 <div className='game__wrapper relative overflow-hidden w-full'>
                     <div className='grid grid-cols-7 m-0 p-0 gap-4'>

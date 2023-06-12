@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import { IconChevronRight, IconWorld } from '@tabler/icons-react';
+import { IconChevronRight, IconWorld, IconChevronDown } from '@tabler/icons-react';
 import TargetIcon from '/images/target-icon.png'
 import PiggyIcon from '/images/pig-icon.png'
 import GiftIcon from '/images/gift-icon.png'
@@ -17,6 +17,16 @@ import {navlistData, navlistInnerData } from './navlistdata'
 function Sidenav({ show }) {
 
   const [modalCurrencyOpen, setModalCurrencyOpen] = useState(false);
+  const [collapseOpen, setCollapseOpen] = useState(false);
+  const [checkboxChecked, setCheckboxChecked] = useState(false);
+
+  const handleCollapseToggle = () => {
+    setCollapseOpen((prevCollapseOpen) => !prevCollapseOpen);
+  };
+
+  const handleCheckboxChange = () => {
+    setCheckboxChecked((prevCheckboxChecked) => !prevCheckboxChecked);
+  };
 
   return (
     <>
@@ -93,14 +103,19 @@ function Sidenav({ show }) {
 
             </div>
 
-            <div className="collapse ovf-inherit">
-              <input type="checkbox" className="peer" />
-              <div className="collapse-title w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-5">
+            <div className={`collapse ovf-inherit ${collapseOpen ? 'open' : ''}`}>
+              <input type="checkbox" className="peer" checked={checkboxChecked} onChange={handleCheckboxChange} />
+              <div className='collapse-title w-full min-40 bg-blue1 link__color1 h-10 pl-4 pr-4 flex justify-between items-center rounded-lg mt-5'
+                onClick={handleCollapseToggle}>
                 <div className='flex justify-between items-center'>
                   <img className='w-[24px] mr-2' src={DiceIcon} alt="" />
                   Casino
                 </div>  
-                <IconChevronRight width="16" height="16" color='#909999' />
+                {checkboxChecked ? (
+                  <IconChevronDown width='16' height='16' color='#909999' />
+                ) : (
+                  <IconChevronRight width='16' height='16' color='#909999' />
+                )}
               </div>
               <div className="collapse-content p-0 pb-0 dark-2 rounded-b-xl text-white">
                 <ul className='mt-1'>
