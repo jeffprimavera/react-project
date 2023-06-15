@@ -348,3 +348,7 @@ aside {
         background-position: -150% 0
     }
 }
+
+.loading__btn button:before {
+    display: none;
+}

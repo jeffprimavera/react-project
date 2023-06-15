@@ -10,7 +10,7 @@ const OriginalTabsGame = () => {
                 <div className='flex justify-start items-center game__title pt-7 pb-4'>
                     <h3 className='text-white text-2xl pr-4'>Bet Originals</h3>
                     <div className='flex justify-start items-center dark-1 p-1 px-3 rounded-full'>
-                        <p>⚡ RTP up to</p>
+                        <p className='text-white'>⚡ RTP up to</p>
                         <span className='block pl-1 yellow-orange font-semibold'>99.02%</span>
                     </div>
                 </div>

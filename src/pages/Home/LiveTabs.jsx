@@ -90,34 +90,33 @@ const LiveCasinoTabsGame = () => {
         </div>
         {gameData.length < totalGames && (
           <>
-          <div className="w-full flex justify-center items-center">
-            <button onClick={loadMore} className={isLoading ? 'loading' : 'btn bg-gradient-shifter w-[200px] h-[45px] m-auto block mt-9 text-white'}>
-              {isLoading ? (
-                <div className='flex justify-center items-center w-full py-5 relative'>
-                  <div className="loading__animation w-[100px] text-center">
-                    <p className='text-white text-left pl-2'>Loading</p>
-                    <LineWave
-                      className="flex justify-center items-center"
-                      height="100"
-                      width="100"
-                      color="#12c2e9"
-                      ariaLabel="line-wave"
-                      wrapperStyle={{}}
-                      wrapperClass=""
-                      visible={true}
-                      firstLineColor=""
-                      middleLineColor=""
-                      lastLineColor=""
-                    />
+            <div className="w-full flex justify-center items-center">
+              <button onClick={loadMore} className={isLoading ? 'loading' : 'btn bg-gradient-shifter w-[200px] h-[45px] m-auto block mt-9 text-white'}>
+                {isLoading ? (
+                  <div className='flex justify-center items-center w-full py-5 relative'>
+                    <div className="loading__animation w-[100px] text-center">
+                      <p className='text-white text-left pl-2'>Loading</p>
+                      <LineWave
+                        className="flex justify-center items-center"
+                        height="100"
+                        width="100"
+                        color="#12c2e9"
+                        ariaLabel="line-wave"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                        visible={true}
+                        firstLineColor=""
+                        middleLineColor=""
+                        lastLineColor=""
+                      />
+                    </div>
                   </div>
-                </div>
-              ) : (
-                'Load More'
-              )}
-            </button>
-          </div>
-        </>
-        
+                ) : (
+                  'Load More'
+                )}
+              </button>
+            </div>
+          </>
         )}
       </div>
     </section>

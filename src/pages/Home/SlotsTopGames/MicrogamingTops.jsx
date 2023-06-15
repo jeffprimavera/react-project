@@ -49,7 +49,7 @@ const MicrogamingSlotsTops = () => {
 
                     <div className='swiper__navigation__btn relative flex justify-end items-center gap-3'>
                         <div className='view__all'>
-                            <Link className='flex justify-center items-center w-[95px] h-[45px] dark-1 rounded-lg'>View All</Link>
+                            <Link className='flex justify-center items-center w-[95px] h-[45px] dark-1 rounded-lg text-white'>View All</Link>
                         </div>
                         <div className='relative flex grid-cols-2 gap-3'>
                             <i className="icon-arrow-long-left review-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">

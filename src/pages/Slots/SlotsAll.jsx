@@ -7,41 +7,47 @@ import { IconSearch } from '@tabler/icons-react';
 import Homepagehero2 from '../Home/homepage-hero2';
 
 const SlotsAllGames = () => {
-  const [selectedProvider, setSelectedProvider] = useState('all-games');
+  const [selectedProvider, setSelectedProvider] = useState('5632/slots');
   const [selectedData, setSelectedData] = useState([]);
   const [sortOrder, setSortOrder] = useState('asc');
   const [visibleData, setVisibleData] = useState([]);
-  const [loadCount, setLoadCount] = useState(21);
+  const [loadCount, setLoadCount] = useState(28);
   const [isLoading, setIsLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [isChangingProvider, setIsChangingProvider] = useState(false);
 
   useEffect(() => {
+    
     const fetchData = async () => {
       try {
-        setIsLoading(true); // Set isLoading to true when fetching data
-        let response;
+        setIsLoading(true);
         if (selectedProvider === 'all-games') {
-          response = await axios.get(
-            'http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots'
-          );
-        } else if (selectedProvider) {
-          response = await axios.get(
-            `http://player.staging.smash.t1t.in/pub/get_frontend_games/${selectedProvider}`
-          );
-        } else {
           setSelectedData([]);
+        } else {
+          const response = await axios.get(
+            `http://player.staging.smash.t1t.in/pub/get_frontend_games/${selectedProvider}?game_type_code=slots`
+          );
+          const data = response?.data?.game_list || [];
+          setSelectedData(data);
         }
-        const data = response?.data?.game_list || [];
-        setSelectedData(data);
-        setIsLoading(false); // Set isLoading to false after fetching data
+        setIsDataLoaded(true);
+        setIsLoading(false);
       } catch (error) {
         console.log('Error fetching data:', error);
-        setIsLoading(false); // Set isLoading to false if there is an error
+        setIsDataLoaded(false);
+        setIsLoading(false);
       }
     };
 
+    if (isChangingProvider) {
+      setIsChangingProvider(false);
+      return;
+    }
+
     fetchData();
-  }, [selectedProvider]);
+  }, [selectedProvider, isChangingProvider]);
 
   useEffect(() => {
     sortData();
@@ -52,6 +58,7 @@ const SlotsAllGames = () => {
   }, [loadCount, selectedData]);
 
   const handleProviderChange = (event) => {
+    setIsChangingProvider(true);
     setSelectedProvider(event.target.value);
     setLoadCount(21);
   };
@@ -86,8 +93,18 @@ const SlotsAllGames = () => {
     setVisibleData(sortedData.slice(0, loadCount));
   };
 
-  const handleLoadMore = () => {
-    setLoadCount((prevLoadCount) => prevLoadCount + 21);
+  const loadMore = () => {
+    if (isDataLoaded) {
+      setIsLoadingMore(true);
+      setLoadCount(prevLoadCount => prevLoadCount + 28);
+      setIsLoading(true); // Set isLoading to true to show the loading animation
+  
+      // Delay the update of isLoadingMore and isLoading states to simulate loading
+      setTimeout(() => {
+        setIsLoadingMore(false);
+        setIsLoading(false);
+      }, 1000); // Adjust the delay time as needed
+    }
   };
 
   return (
@@ -95,6 +112,7 @@ const SlotsAllGames = () => {
       <Homepagehero2 />
 
       <section className='pb-6'>
+
         <div className='search__wrapper cursor-pointer w-96'>
           <div className='flex justify-start items-center bg-blue1 py-1 px-5 rounded-lg'>
             <IconSearch width='16' height='16' color='#909999' />
@@ -107,19 +125,23 @@ const SlotsAllGames = () => {
             />
           </div>
         </div>
+
         <div>
+
           <div className='flex justify-between items-center'>
+
             <div className='game__title pt-7 pb-4'>
               <h3 className='text-white text-2xl'>Slots</h3>
               <span className='loading loading-ring loading-md'></span>
             </div>
+
             <div className='gameprovider__dropdown'>
               <select
                 value={selectedProvider}
                 onChange={handleProviderChange}
                 className='select select-infi max-w-xs mr-4 dark-1 link__color1'
               >
-                <option value='all-games'>All</option>
+                {/* <option value='all-games'>All</option> */}
                 <option value='5632/slots'>Pragmatic Play</option>
                 <option value='5936/slots'>Caleta</option>
                 <option value='5938/slots'>KA Gaming</option>
@@ -140,7 +162,9 @@ const SlotsAllGames = () => {
                 <option value='desc'>Sort Z-A</option>
               </select>
             </div>
+
           </div>
+
           <div className='game__wrapper relative overflow-hidden w-full'>
             {isLoading ? ( // Display loading text if isLoading is true
               <>
@@ -193,16 +217,33 @@ const SlotsAllGames = () => {
                 </div>
               )
             )}
+
             {visibleData.length < selectedData.length && (
-              <button
-                onClick={handleLoadMore}
-                className='load-more-button btn bg-gradient-shifter w-[182px] h-[45px] m-auto block mt-9 text-white'
-              >
-                Load More
-              </button>
+              <div className="w-full flex justify-center items-center loading__btn">
+                <button
+                  onClick={loadMore}
+                  className={
+                    isLoadingMore ? 'loading btn bg-gradient-shifter w-[200px] h-[45px] m-auto block mt-9 text-white' : 'btn bg-gradient-shifter w-[200px] h-[45px] m-auto block mt-9 text-white'
+                  }
+                  disabled={isLoadingMore} // Disable the button when loading to prevent multiple clicks
+                >
+                  {isLoadingMore ? (
+                    <div className='flex justify-center items-center w-full py-5 relative'>
+                      <div className="loading__animation w-[100px] text-center flex justify-center items-center">
+                        <p className='text-white'>Loading..</p>
+                      </div>
+                    </div>
+                  ) : (
+                    'Load More'
+                  )}
+                </button>
+
+              </div>
             )}
           </div>
+
         </div>
+
       </section>
     </>
   );
