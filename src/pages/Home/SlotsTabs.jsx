@@ -50,25 +50,23 @@ const SlotsTabsGame = () => {
                     <Tabs className='tabs__wrapper w-full'>
 
                     <TabPanel>
-                        <section>
-                            <PragmaticPlayTop/>
-                        </section>
+                      <PragmaticPlayTop/>
                     </TabPanel>
 
                     <TabPanel>
-                        <CaletaSlotsTops/>
+                      <CaletaSlotsTops/>
                     </TabPanel>
 
                     <TabPanel>
-                        <KAGamingSlotsTops/>
+                      <KAGamingSlotsTops/>
                     </TabPanel>
 
                     <TabPanel>
-                        <JokerSlotsTops/>
+                      <JokerSlotsTops/>
                     </TabPanel>
 
                     <TabPanel>
-                        <PGSoftSlotsTops/>
+                      <PGSoftSlotsTops/>
                     </TabPanel>
 
                     <div className='flex justify-between items-center'>

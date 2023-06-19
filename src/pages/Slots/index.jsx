@@ -1,6 +1,7 @@
 import SlotsAll from "./SlotsAll"
 
 const SlotsPage = () => {
+
   return (
   <>
     <SlotsAll />

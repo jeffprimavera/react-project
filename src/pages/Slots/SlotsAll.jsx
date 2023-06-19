@@ -3,8 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import { LineWave } from 'react-loader-spinner';
-import { IconSearch } from '@tabler/icons-react';
 import Homepagehero2 from '../Home/homepage-hero2';
+import SearchSlots from '../../components/searchSlots';
 
 const SlotsAllGames = () => {
   const [selectedProvider, setSelectedProvider] = useState('5632/slots');
@@ -13,7 +13,6 @@ const SlotsAllGames = () => {
   const [visibleData, setVisibleData] = useState([]);
   const [loadCount, setLoadCount] = useState(28);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [isChangingProvider, setIsChangingProvider] = useState(false);
@@ -113,17 +112,8 @@ const SlotsAllGames = () => {
 
       <section className='pb-6'>
 
-        <div className='search__wrapper cursor-pointer w-96'>
-          <div className='flex justify-start items-center bg-blue1 py-1 px-5 rounded-lg'>
-            <IconSearch width='16' height='16' color='#909999' />
-            <input 
-            type="text" 
-            placeholder="Game name | Provider" 
-            className="input input-bordered w-full max-w-xs bg-blue1 link__color1"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            />
-          </div>
+        <div className='w-full relative'>
+          <SearchSlots />
         </div>
 
         <div>
