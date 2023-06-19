@@ -1,6 +1,7 @@
 import { OriginalGames } from './ImageData'
 import {Link} from 'react-router-dom'
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
+import LazyLoad from 'react-lazy-load';
 
 const OriginalTabsGame = () => {
     return ( 
@@ -22,7 +23,9 @@ const OriginalTabsGame = () => {
                                 <div className='game__box' key={i}>
                                     <figure key={item.id} className='relative rounded-xl overflow-hidden'>
                                         <div className='img__thumb'>
-                                            <img className='w-full' src={ item.img } alt={item.title} />
+                                            <LazyLoad>
+                                                <img className='w-full' src={ item.img } alt={item.title} />
+                                            </LazyLoad>
                                         </div> 
                                         <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
                                             <div className='text-center text-lg '>

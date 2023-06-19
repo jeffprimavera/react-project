@@ -3,6 +3,7 @@ import { IconSearch } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import { LineWave } from 'react-loader-spinner';
+import LazyLoad from 'react-lazy-load';
 
 const SearchSlots = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,7 +16,12 @@ const SearchSlots = () => {
     try {
       setIsLoading(true);
       setIsNoResults(false);
-      const response = await fetch('http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots');
+      if (searchTerm.trim() === '') {
+        setSearchResults([]);
+        setIsLoading(false);
+        return;
+      }
+      const response = await fetch(`http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots&search=${encodeURIComponent(searchTerm)}`);
       const data = await response.json();
 
       // Check if data.game_list is an array
@@ -53,7 +59,13 @@ const SearchSlots = () => {
     setIsInputFocused(true);
   };
 
-  const handleInputBlur = () => {
+  const handleInputBlur = (e) => {
+    const target = e.relatedTarget;
+    if (target && target.closest('.game__box')) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
     setIsInputFocused(false);
   };
 
@@ -72,7 +84,7 @@ const SearchSlots = () => {
         />
       </div>
       {isInputFocused && (
-        <div className='floating__div'>
+        <div className='floating__div' onMouseDown={(e) => e.stopPropagation()}>
           {isLoading && (
             <div className='loading-animation absolute top-20 left-0 w-full dark-1 z-50 m-0 p-5 rounded-xl'>
               <div className='flex justify-center items-center w-full py-40'>
@@ -96,17 +108,19 @@ const SearchSlots = () => {
             </div>
           )}
           {!isLoading && !isNoResults && searchResults.length > 0 && (
-            <div className='absolute top-20 left-0 w-full dark-1 z-50 m-0 p-5 rounded-xl overflow-x-hidden h-[528px] overflow-y-scroll'>
-              <p className='text-white pb-3'>Result from other categories:</p>
+            <div className='absolute top-20 left-0 w-full dark-1 z-50 m-0 p-5 rounded-xl overflow-x-hidden h-[528px] overflow-y-scroll cursor-default'>
+              <p className='text-white pb-3'>Search Results:</p>
               <div className='game__wrapper grid grid-cols-7 gap-4'>
-                {searchResults.map((game) => (
-                  <div className='game__box' key={game.game_unique_id}>
+                {searchResults.map((game, index) => (
+                  <div className='game__box cursor-pointer' key={`${game.game_unique_id}_${index}`}>
                     <figure className='relative rounded-xl overflow-hidden'>
                       <div className='img__thumb'>
-                        <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
+                        <LazyLoad offset={300}>
+                          <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
+                        </LazyLoad>
                       </div>
                       <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
-                        <div className='text-center text-lg '>
+                        <div className='text-center text-lg'>
                           <Link to={game.game_launch_url.web} className='flex justify-between flex-col h-[180px]' target='_blank'>
                             <p className='text-white block text-sm'>{game.game_name_en}</p>
                             <span className='flex justify-center items-center w-14 h-14 rounded-full'>
@@ -124,7 +138,7 @@ const SearchSlots = () => {
           )}
           {!isLoading && isNoResults && (
             <div className='absolute top-20 left-0 w-full text-center dark-1 z-50 m-0 p-5 rounded-xl text-white h-[250px] flex justify-center items-center'>
-              Games are Not Available
+              No results found.
             </div>
           )}
         </div>

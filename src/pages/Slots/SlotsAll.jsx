@@ -5,6 +5,7 @@ import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import { LineWave } from 'react-loader-spinner';
 import Homepagehero2 from '../Home/homepage-hero2';
 import SearchSlots from '../../components/searchSlots';
+import LazyLoad from 'react-lazy-load';
 
 const SlotsAllGames = () => {
   const [selectedProvider, setSelectedProvider] = useState('5632/slots');
@@ -184,7 +185,9 @@ const SlotsAllGames = () => {
                     <div className='game__box' key={`${game.game_unique_id}_${index}`}>
                       <figure className='relative rounded-xl overflow-hidden'>
                         <div className='img__thumb'>
-                          <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
+                          <LazyLoad offset={300}>
+                            <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
+                          </LazyLoad>
                         </div>
                         <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
                           <div className='text-center text-lg '>

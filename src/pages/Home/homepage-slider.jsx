@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from "swiper";
 import {sliderImageData} from './ImageData'
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import {Link} from 'react-router-dom'
+import LazyLoad from 'react-lazy-load';
 
 const Homepageslider = () => {
     
@@ -33,7 +34,11 @@ const Homepageslider = () => {
                { sliderImageData.map((item) => {
                 return (
                     <SwiperSlide key={item.id} >
-                        <Link to={item.link}><img src={ item.img } alt={item.title} /></Link>
+                        <Link to={item.link}>
+                            <LazyLoad>
+                                <img src={ item.img } alt={item.title} />
+                            </LazyLoad>
+                        </Link>
                     </SwiperSlide>
                 )
                }
