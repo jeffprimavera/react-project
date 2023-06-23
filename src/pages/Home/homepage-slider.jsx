@@ -14,7 +14,7 @@ const Homepageslider = () => {
     
     // Homepage Slider
     <section className='hp__promo__swiper relative'> 
-        <i className="icon-arrow-long-left review-swiper-button-prev absolute top-0 bottom-0 right-0 -left-6 z-10 flex justify-center items-center cursor-pointer">
+        <i className="icon-arrow-long-left hp-promo-swiper-button-prev absolute top-0 bottom-0 right-0 -left-6 z-10 flex justify-center items-center cursor-pointer">
             <IconChevronLeft color='orange' />     
         </i>
         <Swiper
@@ -26,8 +26,8 @@ const Homepageslider = () => {
             disableOnInteraction: false,
         }}
         navigation={{
-            nextEl: '.review-swiper-button-next',
-            prevEl: '.review-swiper-button-prev',
+            nextEl: '.hp-promo-swiper-button-next',
+            prevEl: '.hp-promo-button-prev',
         }}
         modules={[Navigation, Autoplay]} >
             
@@ -44,7 +44,7 @@ const Homepageslider = () => {
                }
                )}
         </Swiper>
-        <i className="icon-arrow-long-right review-swiper-button-next absolute top-0 bottom-0 -right-6 z-10 flex justify-center items-center cursor-pointer">
+        <i className="icon-arrow-long-right hp-promo-swiper-button-next absolute top-0 bottom-0 -right-6 z-10 flex justify-center items-center cursor-pointer">
             <IconChevronRight color='orange' /> 
         </i>
     </section>

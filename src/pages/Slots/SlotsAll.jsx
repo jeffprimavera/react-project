@@ -185,7 +185,7 @@ const SlotsAllGames = () => {
                     <div className='game__box' key={`${game.game_unique_id}_${index}`}>
                       <figure className='relative rounded-xl overflow-hidden'>
                         <div className='img__thumb'>
-                          <LazyLoad offset={300}>
+                          <LazyLoad>
                             <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
                           </LazyLoad>
                         </div>

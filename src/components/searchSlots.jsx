@@ -21,9 +21,13 @@ const SearchSlots = () => {
         setIsLoading(false);
         return;
       }
-      const response = await fetch(`http://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=slots&search=${encodeURIComponent(searchTerm)}`);
+      const response = await fetch(
+        `http://player.staging.smash.t1t.in/pub/get_frontend_games/all?search=${encodeURIComponent(
+          searchTerm
+        )}`
+      );
       const data = await response.json();
-
+  
       // Check if data.game_list is an array
       if (Array.isArray(data.game_list)) {
         const filteredResults = data.game_list.filter((game) => {
@@ -70,7 +74,7 @@ const SearchSlots = () => {
   };
 
   return (
-    <div className='search__wrapper cursor-pointer w-96'>
+    <div className='search__wrapper cursor-pointer w-96 shadow-2xl'>
       <div className='flex justify-start items-center bg-blue1 py-1 px-5 rounded-lg'>
         <IconSearch width='16' height='16' color='#909999' />
         <input

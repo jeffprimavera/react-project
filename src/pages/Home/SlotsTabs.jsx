@@ -14,32 +14,6 @@ import PGSoftSlotsTops from './SlotsTopGames/PGSoftTops';
 
 const SlotsTabsGame = () => {
 
-    const [gamesData, setGamesData] = useState(null);
-
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await fetch(
-              'http://player.staging.smash.t1t.in/pub/get_frontend_games/5632'
-            );
-                
-            if (response.ok) {
-              const data = await response.json();
-              setGamesData(data.game_list);
-            } else {
-              console.log('Error:', response.status);
-            }
-          } catch (error) {
-            console.log('Error:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-
-    const allowedTopGameOrders = ["1", "2", "3", "4", "5", "6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"];
-    const filteredGames = gamesData?.filter(game => allowedTopGameOrders.includes(game.top_game_order));
-
     return (
     
         <section className='pb-6'>

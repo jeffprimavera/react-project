@@ -11,7 +11,7 @@ import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import SlotsTopLoading from '../SlotsLoading';
 import LazyLoad from 'react-lazy-load';
 
-const JokerSlotsTops = () => {
+const DarwinTops = () => {
 
     const [gamesData, setGamesData] = useState(null);
 
@@ -19,7 +19,7 @@ const JokerSlotsTops = () => {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              'http://player.staging.smash.t1t.in/pub/get_frontend_games/5956'
+              'https://player.staging.smash.t1t.in/pub/get_frontend_games/6249/live_dealer'
             );
                 
             if (response.ok) {
@@ -45,7 +45,7 @@ const JokerSlotsTops = () => {
 
                 <div className='flex justify-between items-center'>
                     <div className='game__title pt-7 pb-4'>
-                        <h3 className='text-white text-2xl'>Slots</h3>
+                        <h3 className='text-white text-2xl'>Live Casino</h3>
                     </div>
 
                     <div className='swiper__navigation__btn relative flex justify-end items-center gap-3'>
@@ -53,10 +53,10 @@ const JokerSlotsTops = () => {
                             <Link className='flex justify-center items-center w-[95px] h-[45px] dark-1 rounded-lg text-white'>View All</Link>
                         </div>
                         <div className='relative flex grid-cols-2 gap-3'>
-                            <i className="icon-arrow-long-left slots-top-joker-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
+                            <i className="icon-arrow-long-left livecasino-top-pp-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
                                 <IconChevronLeft color='orange' />     
                             </i>
-                            <i className="icon-arrow-long-right slots-top-joker-swiper-button-next dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
+                            <i className="icon-arrow-long-right livecasino-top-pp-swiper-button-next dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
                                 <IconChevronRight color='orange' /> 
                             </i>
                         </div>
@@ -70,8 +70,8 @@ const JokerSlotsTops = () => {
                     slidesPerView={7}
                     loop={true}
                     navigation={{
-                        nextEl: '.slots-top-joker-swiper-button-next',
-                        prevEl: '.slots-top-joker-swiper-button-prev',
+                        nextEl: '.livecasino-top-pp-swiper-button-next',
+                        prevEl: '.livecasino-top-pp-swiper-button-prev',
                     }}
                     modules={[Navigation]}
                     >
@@ -117,4 +117,4 @@ const JokerSlotsTops = () => {
     )
   }
   
-  export default JokerSlotsTops;
+  export default DarwinTops;

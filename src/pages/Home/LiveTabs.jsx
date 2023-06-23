@@ -14,7 +14,7 @@ const LiveCasinoTabsGame = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('http://player.staging.smash.t1t.in/pub/get_frontend_games/5632/live_dealer');
+        const response = await fetch('https://player.staging.smash.t1t.in/pub/get_frontend_games/all?game_type_code=live_dealer');
         const jsonData = await response.json();
 
         setGameData(jsonData.game_list.slice(0, limit));

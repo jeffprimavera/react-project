@@ -219,6 +219,9 @@ aside {
             color: #F53077;
         }
     }
+    @media (min-width: $layout-breakpoint-lg-1) {
+        padding-bottom: 0.5rem;
+    }
 }
 
 
@@ -251,12 +254,12 @@ aside {
     padding: 40px;
 
     &.casino__bg {
-        background: url(/images/hp-casinno-banner.png) no-repeat;
+        background: url(/images/hp-casinno-banner.jpg) no-repeat;
         background-size: cover;
     }
 
     &.sports__bg {
-        background: url(/images/hp-sports-banner.png) no-repeat;
+        background: url(/images/hp-sports-banner.jpg) no-repeat;
         background-size: cover;
     }
 
@@ -266,6 +269,7 @@ aside {
             span {
                 padding-top: 10px;
             }
+
         }
 
     }

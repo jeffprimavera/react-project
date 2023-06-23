@@ -9,7 +9,7 @@ const HomeBanners = () => {
 
         <div className='w-full grid grid-cols-2 items-center gap-3'>
 
-            <div className="hp__banners__bg casino__bg">
+            <div className="hp__banners__bg casino__bg rounded-xl overflow-hidden">
                 <div className="hpb__content__wrapper">
                     <span className="title__wrapper text-white text-5xl font-semibold block">BET Now <span className="block font-semibold text-gradient-breeze">GET BONUS</span></span>
                     <p className="text-white">Play the best Crypto Games 2022 – Crash, 1000+ Slot, Roulette, Baccarat, Live Dealers at BET999.io. Cashback up to 40% and swift 24/7 support.</p>
@@ -17,7 +17,7 @@ const HomeBanners = () => {
                 </div>
             </div>
 
-            <div className="hp__banners__bg sports__bg">
+            <div className="hp__banners__bg sports__bg rounded-xl overflow-hidden">
                 <div className="hpb__content__wrapper">
                         <span className="title__wrapper text-white text-5xl font-semibold block">BET Now <span className="block font-semibold text-gradient-loveliberty">GET 100% BONUS</span></span>
                         <p className="text-white">Sports Betting on BET999: 10,000+ live events, 50+ sports with highest odds & more bonuses .</p>

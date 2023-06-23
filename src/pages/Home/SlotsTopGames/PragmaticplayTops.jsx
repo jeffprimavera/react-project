@@ -53,10 +53,10 @@ const PragmaticSlotsTops = () => {
                             <button className='flex justify-center items-center w-[95px] h-[45px] dark-1 rounded-lg text-white'>View All</button>
                         </div>
                         <div className='relative flex grid-cols-2 gap-3'>
-                            <i className="icon-arrow-long-left review-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
+                            <i className="icon-arrow-long-left slots-top-pp-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
                                 <IconChevronLeft color='orange' />     
                             </i>
-                            <i className="icon-arrow-long-right review-swiper-button-next dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
+                            <i className="icon-arrow-long-right slots-top-pp-swiper-button-next dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
                                 <IconChevronRight color='orange' /> 
                             </i>
                         </div>
@@ -70,8 +70,8 @@ const PragmaticSlotsTops = () => {
                     slidesPerView={7}
                     loop={true}
                     navigation={{
-                        nextEl: '.review-swiper-button-next',
-                        prevEl: '.review-swiper-button-prev',
+                        nextEl: '.slots-top-pp-swiper-button-next',
+                        prevEl: '.slots-top-pp-swiper-button-prev',
                     }}
                     modules={[Navigation]}
                     >
@@ -82,7 +82,7 @@ const PragmaticSlotsTops = () => {
                                             <div className='game__box'>
                                                 <figure className='relative rounded-xl overflow-hidden'>
                                                     <div className='img__thumb'>
-                                                        <LazyLoad offset={300}>
+                                                        <LazyLoad>
                                                             <img className='w-full' src={game.image_path.en} alt={game.game_name_en} />
                                                         </LazyLoad>
                                                     </div> 
