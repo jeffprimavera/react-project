@@ -15,6 +15,7 @@ Template:  Mobile/Web React Template
 ★ 04 Homepage Promo Swiper CSS
 ★ 05 Homepage Banners CSS
 ★ 06 Homepage Tabs CSS
+★ 07 Homepage Bet Tabs CSS
 
 
 ★ 00 Media Querry CSS
@@ -357,6 +358,35 @@ aside {
 .loading__btn button:before {
     display: none;
 }
+
+
+/******************************** 07 Homepage Bet Tabs CSS ********************************/
+.bet__container {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    animation: scroll-up-animation 150s infinite linear;
+
+    .game__bet {
+        span {
+            background: $yellow-orange-color;
+            color: #fff;
+            font-size: 10px;
+            line-height: 23px;
+        }
+        
+    }
+}
+
+@keyframes scroll-up-animation {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+
 
 /******************************** 00 Media Querry CSS ********************************/
 @media (max-width: $layout-breakpoint-lg-1) {
