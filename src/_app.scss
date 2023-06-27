@@ -15,8 +15,10 @@ Template:  Mobile/Web React Template
 ★ 04 Homepage Promo Swiper CSS
 ★ 05 Homepage Banners CSS
 ★ 06 Homepage Tabs CSS
-*/
 
+
+★ 00 Media Querry CSS
+*/
 
 @import "_variables.scss";
 @import "_mixins.scss";
@@ -118,7 +120,6 @@ header {
 .show {
     left: 0;
 }
-
 /** Responsive Sidenav **/
 .space-toggle {
 
@@ -355,4 +356,54 @@ aside {
 
 .loading__btn button:before {
     display: none;
+}
+
+/******************************** 00 Media Querry CSS ********************************/
+@media (max-width: $layout-breakpoint-lg-1) {
+    .container {
+        max-width: 1190px;
+    }
+    .hp__wrapper {
+        .title__wrapper {
+            padding-top: 1.5rem;
+        }
+        .pl-8.pt-5 {
+            padding-top: 0.3rem;
+        }
+    }
+    .hp__banners__bg {
+        padding-top: 10px;
+    }
+    .depo__banner {
+        top: 2rem;
+        right: 90px;
+    } 
+}
+@media (max-width: $layout-breakpoint-lg-2) {
+    .hp__wrapper.null {
+        .top__banner {
+            .title__wrapper {
+                line-height: 40px;
+                font-size: 2.2rem;
+            }
+        }
+        .hp__banners__bg {
+            padding: 20px;
+            height: 270px;
+            .hpb__content__wrapper {
+                .title__wrapper {
+                    font-size: 2rem;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
+    .top__banner {
+        padding-bottom: 1.5rem;
+    }
+    .hpb__content__wrapper {
+        .title__wrapper {
+            font-size: 2.5rem;
+        }
+    }
 }

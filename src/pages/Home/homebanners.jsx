@@ -30,7 +30,7 @@ const HomeBanners = () => {
             <div className="w-full h-full overflow-hidden rounded-xl">
                 <img src={DepoImg} alt="" />
             </div>
-            <div className='absolute right-[145px] top-16 text-white font-semibold text-2xl'>
+            <div className='depo__banner absolute right-[145px] top-16 text-white font-semibold text-2xl '>
                 <div>
                     <span><span className='text-yellow-400'>Deposit Bonus</span> without digital wallet</span>
                 </div>
