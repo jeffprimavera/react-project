@@ -25,7 +25,7 @@ const BetTabs = () => {
                         <div className='text-white text-right flex-1 pr-[16px] text-base'>Payout</div>
                     </div>
 
-                    <TabPanel className='h-[550px] overflow-hidden'>
+                    <TabPanel>
                         <AllBetTabs />
                     </TabPanel>
 

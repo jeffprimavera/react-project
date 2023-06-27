@@ -376,6 +376,16 @@ aside {
         
     }
 }
+.tabs__wrapper {
+    .react-tabs__tab-panel {
+        overflow: hidden;
+        display: none;
+    }
+    .react-tabs__tab-panel--selected {
+        display: block;
+        height: 550px;;
+    }
+}
 
 @keyframes scroll-up-animation {
     0% {
