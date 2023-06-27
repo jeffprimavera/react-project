@@ -8,7 +8,7 @@ const BetTabs = () => {
     <>
         <section className='py-6'>
             <div className='flex justify-between items-start'>
-                <Tabs className='tabs__wrapper w-full'>
+                <Tabs className='tabs__wrapper tabs__rank__player w-full'>
                     
                     <div className='flex justify-between items-center relative'>
                         <TabList>

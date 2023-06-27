@@ -44,7 +44,7 @@ const AllBetTabs = () => {
 
   useEffect(() => {
     // Update the container height reference when visible items change
-    const bet__container = containerRef.current;
+    const container = containerRef.current;
     const dataContainer = dataContainerRef.current;
     containerHeightRef.current = dataContainer.offsetHeight; // Use offsetHeight instead of scrollHeight
   }, [visibleItems]);
