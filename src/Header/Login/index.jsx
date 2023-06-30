@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Modal from "react-modal";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import LoginModalAccount from './LoginTab';
@@ -6,6 +7,7 @@ import LoginImg from '/images/newrakeback-blank.png';
 import { IconX } from '@tabler/icons-react';
 import LoginFB from '/images/login_fb.png';
 import LoginGoogle from '/images/login_google.png';
+import SignUpModal from '../Signup';
 
 const customStyles = {
     overlay: {
@@ -30,8 +32,15 @@ const customStyles = {
 
 const LoginModal = ({ isOpen, handleModalOpen }) => {
 
+    const [modalSignUpOpen, setModalSignUpOpen] = useState(false);
+
+    const handleSignUpClick = () => {
+        setModalSignUpOpen(true);
+    };
+
     return (
 
+        <>
         <Modal
             closeTimeoutMS={200}
             isOpen={isOpen}
@@ -91,7 +100,7 @@ const LoginModal = ({ isOpen, handleModalOpen }) => {
 
                             <div className='mt-[20px] text-[12px] text-left text-[#8194B0] mobile:text-[14px] flex justify-center'>
                                 <div>Don't have an account?</div>
-                                <span className='text-red-600 cursor-pointer ml-[5px]'>Sign Up</span>
+                                <span className='text-[#00b0d8] cursor-pointer ml-[5px]' onClick={handleSignUpClick}>Sign Up</span>
                             </div>
 
                         </div>
@@ -106,7 +115,9 @@ const LoginModal = ({ isOpen, handleModalOpen }) => {
             color='orange' 
             />
         </Modal>
-
+        
+        {modalSignUpOpen && <SignUpModal isOpen={modalSignUpOpen} handleModalOpen={setModalSignUpOpen} />}
+        </>
     );
 };
 

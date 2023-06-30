@@ -31,11 +31,18 @@ const customStyles = {
 
 const SignUpModal = ({ isOpen, handleModalOpen }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [modalLoginOpen, setModalLoginOpen] = useState(false);
 
   const togglePasswordVisibility = (event) => {
     event.preventDefault();
     setPasswordVisible(!passwordVisible);
   };
+
+  const handleLoginClick = () => {
+    setModalLoginOpen(true);
+  };
+
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <>
@@ -97,17 +104,31 @@ const SignUpModal = ({ isOpen, handleModalOpen }) => {
                       </span>
                       <input className="input-tag placeholder:text-[#849eb7]" type="text" placeholder="Invite code (optional)" />
                     </div>
+
+                    <div className='flex justify-start items-center mt-[25px] text-[12px] text-[#8194B0] text-left mobile:font-[400]'>
+                      <span className='block pr-1'>Signing up means you have agreed</span>
+                      <Link to='' className="text-[#00b0d8]">Terms and conditions</Link>
+                    </div>
+
+                    <div className='flex justify-start items-start gap-1 mt-[15px] remember__me'>
+                      <div className='form-control'>
+                        <label className="cursor-pointer label">
+                          <input type="checkbox"
+                          checked={isChecked}
+                          onChange={(e) => setIsChecked(e.target.checked)}
+                          className="checkbox checkbox-warning w-[16px] h-[16px]" 
+                          />
+                        </label>
+                      </div>
+                      <div className='text-[12px] text-[#8194B0] text-left mobile:font-[400]'>I agree to receive promotional and marketing information from BET777</div>
+                    </div>
+
                     <div className="mt-[20px] flex flex-row px-[17px] h-[46px] items-center rounded-[10px] cursor-pointer justify-center bg-primary-linear-1 box-shadow-7 bg-gradient-shifter">
-                      <span className="font-[700]">Log in</span>
+                      <span className="font-[700]">Create Account</span>
                     </div>
                   </form>
 
-                  <div className='flex justify-start items-center mt-[15px] text-[12px] text-[#8194B0] text-left mobile:font-[400]'>
-                    <span className='block pr-1'>Signing up means you have agreed</span>
-                    <Link to='' className="text-[#00b0d8]">Terms and conditions</Link>
-                  </div>
-
-                  <div className='flex justify-center gap-4 w-[256px] m-[0_auto] pt-5'>
+                  <div className='flex justify-center gap-4 w-[256px] m-[0_auto] pt-10'>
                     <div className='flex items-center justify-center cursor-pointer'>
                       <span className='w-[46px] h-[46px]'><img src={LoginFB} alt="" /></span>
                     </div>
@@ -118,7 +139,7 @@ const SignUpModal = ({ isOpen, handleModalOpen }) => {
 
                   <div className='mt-[20px] text-[12px] text-left text-[#8194B0] mobile:text-[14px] flex justify-center'>
                     <div>Already have an account?</div>
-                    <span className='text-[#00b0d8] cursor-pointer ml-[5px]'>Log In</span>
+                    <span className='text-[#00b0d8] cursor-pointer ml-[5px]' onClick={handleLoginClick}>Log In</span>
                   </div>
                 </div>
               </div>
@@ -133,6 +154,9 @@ const SignUpModal = ({ isOpen, handleModalOpen }) => {
         color='orange' 
         />
       </Modal>
+
+      {modalLoginOpen && <LoginModal isOpen={modalLoginOpen} handleModalOpen={setModalLoginOpen} />}
+
     </>
   );
 };
