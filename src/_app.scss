@@ -16,6 +16,7 @@ Template:  Mobile/Web React Template
 ★ 05 Homepage Banners CSS
 ★ 06 Homepage Tabs CSS
 ★ 07 Homepage Bet Tabs CSS
+★ 08 Header Login/Registration CSS
 
 
 ★ 00 Media Querry CSS
@@ -80,8 +81,9 @@ body.ReactModal__Body--open {
 
             .ReactModal__Content {
                 box-shadow: 0 4px 64px rgba(0, 0, 0, 0.25);
-                border-radius: 10px !important;
-                border: 1px rgb(255 255 255 / 26%) solid !important;
+                border-radius: 40px !important;
+                border: 1px rgb(255 255 255 / 0%) solid !important;
+                padding: 15px !important;
             }
 
             &.ReactModal__Overlay--after-open {
@@ -394,7 +396,92 @@ aside {
     100% {
       transform: translateY(-100%);
     }
-  }
+}
+
+
+
+/******************************** 08 Header Login/Registration CSS ********************************/
+.logreg__wrapper {
+    .tabs__wrapper {
+        ul {
+            display: flex;
+            width: 100%;;
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                cursor: pointer;
+                background-color: #1f2731;
+
+                &.react-tabs__tab--selected {
+                    background-color: transparent;
+                }
+            }
+        }
+        .react-tabs__tab-panel--selected {
+            height: auto;
+        }
+        .form__wrapper {
+            form {
+                .input__wrapper {
+                    height: 56px;
+                    padding: 0 14px;
+                    position: relative;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -moz-box;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -webkit-align-items: center;
+                    -moz-box-align: center;
+                    align-items: center;
+                    border: 0 solid #2a3546;
+                    background: #1f2731;
+                    -webkit-transition: color .1s ease-in-out,border-color .1s ease-in-out;
+                    -o-transition: color .1s ease-in-out,border-color .1s ease-in-out;
+                    -moz-transition: color .1s ease-in-out,border-color .1s ease-in-out;
+                    transition: color .1s ease-in-out,border-color .1s ease-in-out;
+                    border-radius: 10px;
+                    input {
+                        width: 0;
+                        -webkit-box-flex: 1;
+                        -webkit-flex: 1 1;
+                        -moz-box-flex: 1;
+                        flex: 1 1;
+                        display: block;
+                        color: #fff;
+                        background-color: transparent;
+                        outline: none;
+                        line-height: 20px;
+                        padding: 0;
+                        border: none;
+                        height: 20px;
+                        font-size: 14px;
+                    }
+                    .PhoneInput {
+                        width: 100%;
+                        input {
+                            width: 100%;
+                            margin-left: 10px;
+                            &::placeholder {
+                                color: #849eb7;
+                            }
+                        }
+                        .PhoneInputCountry {
+                            select {
+                                background: rgb(33 37 53 / 80%);
+                                border-radius: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
 
 
 
