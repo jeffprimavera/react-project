@@ -29,13 +29,8 @@ const customStyles = {
   },
 };
 
-const SignUpModal = ({ isOpen, handleModalSignUpOpen }) => {
-  const [modalLoginOpen, setModalLoginOpen] = useState(false);
+const SignUpModal = ({ isOpen, handleModalOpen }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-
-  const handleLoginClick = () => {
-    setModalLoginOpen(true);
-  };
 
   const togglePasswordVisibility = (event) => {
     event.preventDefault();
@@ -46,10 +41,10 @@ const SignUpModal = ({ isOpen, handleModalSignUpOpen }) => {
     <>
       <Modal
         closeTimeoutMS={200}
-        isOpen={true} // Always open the sign-up modal
+        isOpen={isOpen}
         ariaHideApp={false}
         shouldCloseOnOverlayClick={true}
-        onRequestClose={() => handleModalSignUpOpen(false)}
+        onRequestClose={() => handleModalOpen(false)}
         style={customStyles}
       >
         <div className='logreg__wrapper text-white'>
@@ -123,7 +118,7 @@ const SignUpModal = ({ isOpen, handleModalSignUpOpen }) => {
 
                   <div className='mt-[20px] text-[12px] text-left text-[#8194B0] mobile:text-[14px] flex justify-center'>
                     <div>Already have an account?</div>
-                    <span className='text-[#00b0d8] cursor-pointer ml-[5px]' onClick={handleLoginClick}>Log In</span>
+                    <span className='text-[#00b0d8] cursor-pointer ml-[5px]'>Log In</span>
                   </div>
                 </div>
               </div>
@@ -133,13 +128,11 @@ const SignUpModal = ({ isOpen, handleModalSignUpOpen }) => {
           </div>
         </div>
         <IconX 
+        onClick={() => handleModalOpen(false)} 
         className='absolute right-4 top-4 w-6 h-6 rounded-full cursor-pointer p-1 border__1' 
-        onClick={() => handleModalSignUpOpen(false)}
         color='orange' 
         />
       </Modal>
-
-      {modalLoginOpen && <LoginModal isOpen={modalLoginOpen} handleModalOpen={setModalLoginOpen} />}
     </>
   );
 };
