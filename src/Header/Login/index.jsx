@@ -35,7 +35,13 @@ const LoginModal = ({ isOpen, handleModalOpen }) => {
     const [modalSignUpOpen, setModalSignUpOpen] = useState(false);
 
     const handleSignUpClick = () => {
-        setModalSignUpOpen(true);
+        handleModalOpen(false); // Close the LoginModal
+        setModalSignUpOpen(true); // Open the SignUpModal
+    };
+
+    const handleCloseSignUp = () => {
+        handleModalOpen(true); // Notify the LoginModal to open again
+        setModalSignUpOpen(false); // Close the SignUpModal
     };
 
     return (
@@ -116,7 +122,9 @@ const LoginModal = ({ isOpen, handleModalOpen }) => {
             />
         </Modal>
         
-        {modalSignUpOpen && <SignUpModal isOpen={modalSignUpOpen} handleModalOpen={setModalSignUpOpen} />}
+        {modalSignUpOpen && (
+            <SignUpModal isOpen={modalSignUpOpen} handleClose={handleCloseSignUp} />
+        )}
         </>
     );
 };

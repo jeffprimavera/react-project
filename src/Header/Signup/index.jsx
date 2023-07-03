@@ -29,9 +29,10 @@ const customStyles = {
   },
 };
 
-const SignUpModal = ({ isOpen, handleModalOpen }) => {
+const SignUpModal = ({ isOpen, handleClose, handleModalOpen }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [modalLoginOpen, setModalLoginOpen] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const togglePasswordVisibility = (event) => {
     event.preventDefault();
@@ -42,7 +43,9 @@ const SignUpModal = ({ isOpen, handleModalOpen }) => {
     setModalLoginOpen(true);
   };
 
-  const [isChecked, setIsChecked] = useState(false);
+  const handleCloseModal = () => {
+    handleClose(); // Notify the SignUpModal to close
+  };
 
   return (
     <>
@@ -155,7 +158,9 @@ const SignUpModal = ({ isOpen, handleModalOpen }) => {
         />
       </Modal>
 
-      {modalLoginOpen && <LoginModal isOpen={modalLoginOpen} handleModalOpen={setModalLoginOpen} />}
+      {modalLoginOpen && (
+        <LoginModal isOpen={modalLoginOpen} handleModalOpen={setModalLoginOpen} />
+      )}
 
     </>
   );
