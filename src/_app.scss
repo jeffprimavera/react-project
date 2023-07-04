@@ -496,6 +496,22 @@ footer {
     .footer__links {
         line-height: 32px;
     }
+    .social__media__wrapper {
+        .social__icons {
+            a {
+                width: 35px;
+                height: 35px;
+                border: 1px rgba(141, 177, 235, 0.5) solid;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    .copyright__wrapper {
+        border-top: 1px rgba(141, 177, 235, 0.219) solid;
+    }
 }
 
 
