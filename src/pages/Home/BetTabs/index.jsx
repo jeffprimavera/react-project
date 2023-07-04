@@ -36,6 +36,7 @@ const BetTabs = () => {
                 </Tabs>
             </div>
         </section>
+        
     </>
   );
 };

@@ -17,6 +17,7 @@ Template:  Mobile/Web React Template
 ★ 06 Homepage Tabs CSS
 ★ 07 Homepage Bet Tabs CSS
 ★ 08 Header Login/Registration CSS
+★ 09 Footer CSS
 
 
 ★ 00 Media Querry CSS
@@ -126,7 +127,7 @@ header {
 /** Responsive Sidenav **/
 .space-toggle {
 
-    padding-left:  calc(var(--nav-width) + 60px );
+    padding-left:  calc(var(--nav-width) + 0px );
 
     aside {
         left: -300px;
@@ -399,7 +400,6 @@ aside {
 }
 
 
-
 /******************************** 08 Header Login/Registration CSS ********************************/
 .logreg__wrapper {
     .tabs__wrapper {
@@ -489,6 +489,14 @@ aside {
     }
 }
 
+
+/******************************** ★ 09 Footer CSS ********************************/
+footer {
+
+    .footer__links {
+        line-height: 32px;
+    }
+}
 
 
 

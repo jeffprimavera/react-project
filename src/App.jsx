@@ -15,10 +15,10 @@ const App = () => {
   return (
     <div className={`flex flex-col h-screen w-screen pl-72 overflow-x-hidden transition-all delay-200 hp__wrapper ${show ? null : 'space-toggle'} `}>
       <Header onClick={toggleShow} />
-      <main className="container mx-auto flex flex-col min-h-screen px-10 pb-4 z-0 pt-28">
+      <main className="container mx-auto flex flex-col px-10 pb-4 z-0 pt-28">
         <Outlet />
-        <Footer /> 
       </main>
+      <Footer />
       <Sidenav show={show} />
     </div>
   )
