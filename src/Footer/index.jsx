@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import Gccuracao from '/images/gc.svg'
 import Adultguide from '/images/plus-18.png'
 import Secure from '/images/3.png'
-import { IconBrandTelegram, IconBrandYoutube, IconBrandTwitter, IconBrandInstagram, IconBrandDiscord, IconBrandFacebook, IconBrandTiktok, IconBrandTiktoFilled  } from '@tabler/icons-react';
+import { IconBrandTelegram, IconBrandYoutube, IconBrandTwitterFilled, IconBrandInstagram, IconBrandDiscordFilled, IconBrandFacebookFilled, IconBrandTiktoFilled  } from '@tabler/icons-react';
 
 const Footer = () => {
   return (
@@ -93,19 +93,19 @@ const Footer = () => {
             <div className='flex flex-row items-center text-[#8194B0] social__icons gap-2'>
               <Link><IconBrandTelegram width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
               <Link><IconBrandYoutube width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
-              <Link><IconBrandTwitter width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
+              <Link><IconBrandTwitterFilled width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
               <Link><IconBrandInstagram width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
-              <Link><IconBrandDiscord width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
+              <Link><IconBrandDiscordFilled width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
               <Link><IconBrandTiktoFilled width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
-              <Link><IconBrandFacebook width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
+              <Link><IconBrandFacebookFilled width="20" height="20" color='rgba(141, 177, 235, 0.5)' /></Link>
             </div>
           </div>
 
         </div>
 
         <div className='copyright__wrapper text-[#849EB7] text-[12px] font-[400] text-center w-full pt-7 mt-5'>
-            Copyright (C) 2023 Bet777. All Rights Reserved.
-          </div>
+          Copyright (C) 2023 Bet777. All Rights Reserved.
+        </div>
 
       </div>
     </footer>
