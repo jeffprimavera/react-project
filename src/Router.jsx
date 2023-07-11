@@ -5,6 +5,7 @@ import Contact from './pages/Contact'
 import Projects from './pages/Projects'
 import Sports from './pages/Sports'
 import Slots from './pages/Slots'
+import Originals from './pages/BetOrignals'
 import App from './App'
 
 const Router = ( ) => {
@@ -12,26 +13,12 @@ const Router = ( ) => {
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="" element={<Home />} />
-        <Route
-          path="about"
-          element={<About />}
-        />
-        <Route
-          path="contact"
-          element={<Contact />}
-        />
-        <Route
-          path="projects"
-          element={<Projects />}
-        />
-        <Route
-          path="sports"
-          element={<Sports />}
-        />
-        <Route
-          path="slots"
-          element={<Slots />}
-        />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="projects" element={<Projects />} />
+        <Route path="sports" element={<Sports />} />
+        <Route path="slots" element={<Slots />}  />
+        <Route path="originals" element={<Originals />}  />
       </Route>
     </Routes>
   )
