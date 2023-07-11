@@ -16,7 +16,7 @@ export const navlistData = [
     id:"3",
     img: "./images/cards-icon.png",
     title: "Live Casino",
-    link: "/",
+    link: "/livecasino",
   },
   {
     id:"4",
@@ -46,7 +46,7 @@ export const navlistData = [
     id:"8",
     img: "./images/all-icon.png",
     title: "All Games",
-    link: "/",
+    link: "/allgames",
   },
 ]
 
