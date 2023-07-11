@@ -6,6 +6,7 @@ import Projects from './pages/Projects'
 import Sports from './pages/Sports'
 import Slots from './pages/Slots'
 import Originals from './pages/BetOrignals'
+import LiveCasino from './pages/LiveCasino'
 import App from './App'
 
 const Router = ( ) => {
@@ -19,6 +20,7 @@ const Router = ( ) => {
         <Route path="sports" element={<Sports />} />
         <Route path="slots" element={<Slots />}  />
         <Route path="originals" element={<Originals />}  />
+        <Route path="livecasino" element={<LiveCasino />}  />
       </Route>
     </Routes>
   )
