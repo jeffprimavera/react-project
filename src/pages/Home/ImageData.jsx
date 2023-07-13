@@ -50,7 +50,7 @@ export const OriginalGames = [
     },
     {
         "id": 2,
-        "link": "",
+        "link": "/crash",
         "img": "/images/crash.jpg",
         "gamename": "Crash",
         "owner": "Bet777"

@@ -18,6 +18,7 @@ Template:  Mobile/Web React Template
 ★ 07 Homepage Bet Tabs CSS
 ★ 08 Header Login/Registration CSS
 ★ 09 Footer CSS
+★ 10 Bet Original Games
 
 
 ★ 00 Media Querry CSS
@@ -511,6 +512,17 @@ footer {
     }
     .copyright__wrapper {
         border-top: 1px rgba(141, 177, 235, 0.219) solid;
+    }
+}
+
+/******************************** ★ 10 Bet Original Games ********************************/
+.iframe__wrapper {
+    height: -moz-calc(100vh - 200px);
+    height: calc(100vh - 200px);
+    max-height: 800px;
+
+    iframe {
+        background: #fff;
     }
 }
 
