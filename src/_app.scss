@@ -19,6 +19,7 @@ Template:  Mobile/Web React Template
 ★ 08 Header Login/Registration CSS
 ★ 09 Footer CSS
 ★ 10 Bet Original Games
+★ 11 Related Games Slider
 
 
 ★ 00 Media Querry CSS
@@ -527,6 +528,12 @@ footer {
 }
 
 
+/******************************** ★ 11 Related Games Slider ********************************/
+.related__wrapper {
+    .splide {
+        padding: 0;
+    }
+}
 
 
 /******************************** 00 Media Querry CSS ********************************/

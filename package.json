@@ -12,6 +12,7 @@
   "dependencies": {
     "@babel/helper-compilation-targets": "^7.22.5",
     "@react-navigation/stack": "^6.3.16",
+    "@splidejs/react-splide": "^0.7.12",
     "@tabler/icons-react": "^2.18.0",
     "axios": "^0.24.0",
     "cross-spawn": "^7.0.3",
