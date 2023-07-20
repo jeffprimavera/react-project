@@ -2,14 +2,12 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from "react";
 import {Link} from 'react-router-dom';
-import { IconPlayerPlayFilled } from '@tabler/icons-react';
+import { IconPlayerPlayFilled, IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import { Navigation } from "swiper";
 import 'swiper/css';
 import "swiper/css/navigation";
 import 'react-tabs/style/react-tabs.css';
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import SlotsTopLoading from '../SlotsLoading';
-import LazyLoad from 'react-lazy-load';
 
 const PragmaticSlotsTops = () => {
 
@@ -19,7 +17,7 @@ const PragmaticSlotsTops = () => {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              'http://player.staging.smash.t1t.in/pub/get_frontend_games/5632'
+              'http://player.usd.amusino.t1t.in/pub/get_frontend_games/1507'
             );
                 
             if (response.ok) {

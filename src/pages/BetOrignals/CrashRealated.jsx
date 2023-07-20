@@ -1,6 +1,6 @@
-import { Splide, SplideTrack, SplideSlide } from '@splidejs/react-splide';
+import { Splide, SplideSlide, SplideTrack  } from '@splidejs/react-splide';
 import {Link} from 'react-router-dom'
-import { IconPlayerPlayFilled } from '@tabler/icons-react';
+import { IconPlayerPlayFilled, IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import { CrashRelated } from './RelatedImgData';
 import '@splidejs/react-splide/css/skyblue';
 import '@splidejs/react-splide/css/sea-green';
@@ -13,17 +13,21 @@ const CrashRelatedGames = () => {
 
             <div className='game__wrapper'>
             
-            <div className='pb-2'>
+            <div className='pb-3'>
                 <div className='text-white text-3xl'>Related Games</div>
             </div>
 
             <Splide
+            hasTrack={ false }
+            aria-label="..."
             options={{
-            perPage: 7,
-            gap: '0.5rem',
-            pagination: false,
+                rewind: true,
+                perPage: 7,
+                gap: '0.5rem',
+                pagination: false,
+                autoplay: true,
             }}
-            >
+            >   <SplideTrack>
                 {CrashRelated.map((item, i) => (
                     <SplideSlide key={i}>
                         <div className='game__box'>
@@ -34,7 +38,7 @@ const CrashRelatedGames = () => {
                                 <figcaption className='flex justify-center items-center opacity-0 invisible absolute top-0 left-0 w-full h-full cursor-pointer transition-all'>
                                     <div className='text-center text-lg '>
                                         <Link to={item.link} className='flex justify-between flex-col h-[180px]'>
-                                            <p className='text-white block text-sm'>{ item.gamename }</p>
+                                            <p className='text-white block text-sm'>{ item.title }</p>
                                             <span className='flex justify-center items-center w-14 h-14 rounded-full'>
                                                 <IconPlayerPlayFilled className='text-white' /> 
                                             </span>
@@ -46,10 +50,21 @@ const CrashRelatedGames = () => {
                         </div>
                     </SplideSlide>
                 ))}
-                <div className="splide__arrows">
-                    <button className="splide__arrow splide__arrow--prev">Prev</button>
-                    <button className="splide__arrow splide__arrow--next">Next</button>
+                </SplideTrack>
+
+                <div className="splide__arrows absolute right-[-10px] top-[-47px] flex justify-end items-center gap-10">
+                    <button className="splide__arrow splide__arrow--prev">
+                        <i className="icon-arrow-long-left slots-top-pp-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
+                            <IconChevronLeft color='orange' />
+                        </i>
+                    </button>
+                    <button className="splide__arrow splide__arrow--next">
+                        <i className="icon-arrow-long-left slots-top-pp-swiper-button-prev dark-1 w-[65px] h-[45px] rounded-lg z-10 flex justify-center items-center cursor-pointer">
+                            <IconChevronRight color='orange' /> 
+                        </i>
+                    </button>
                 </div>
+
             </Splide>
 
             </div>

@@ -533,6 +533,20 @@ footer {
     .splide {
         padding: 0;
     }
+    .splide__arrows {
+        .splide__arrow {
+            width: 4.5em;
+            position: relative;
+            transform: unset;
+            &.splide__arrow--prev svg {
+                transform: scaleX(1);
+            }
+            svg {
+                fill: transparent;
+                width: 1.7em;
+            }
+        }
+    }
 }
 
 
